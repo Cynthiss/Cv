@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E💻%3C/text%3E%3C/svg%3E">
 </head>
 <body>
+    <div id="cv">
     <header>
         <h1>Mi Currículum Vitae</h1>
     </header>
@@ -81,6 +82,27 @@
     <footer>
         <p>&copy; 2025 Mi CV</p>
     </footer>
-    <a href="cv.pdf" download="Mi_CV.pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF" style="position:fixed; right:16px; bottom:16px; background:#e74c3c; color:#fff; padding:12px 16px; border-radius:9999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.2); font-weight:600; z-index:1000;">⬇️ Descargar</a>
+    </div>
+    <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF" style="position:fixed; right:16px; bottom:16px; background:#e74c3c; color:#fff; padding:12px 16px; border-radius:9999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.2); font-weight:600; z-index:1000;">⬇️ Descargar</a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-YcsIPoQGgCwEuk+qS0bkkCm1cW0XkyRjO6jwxKF1u9IiMaivGi99ZTSdKCbFf8gDuwZQzQ0imeISFRCGDpa2/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      function descargarPDF() {
+        const element = document.getElementById('cv');
+        const options = {
+          margin: 0.5,
+          filename: 'Mi_CV.pdf',
+          image: { type: 'jpeg', quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true },
+          jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        html2pdf().set(options).from(element).save();
+      }
+
+      document.getElementById('btn-pdf').addEventListener('click', function (e) {
+        e.preventDefault();
+        descargarPDF();
+      });
+    </script>
 </body>
 </html>
