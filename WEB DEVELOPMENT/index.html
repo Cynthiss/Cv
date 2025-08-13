@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi CV</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E💻%3C/text%3E%3C/svg%3E">
+    <!-- Agregar Font Awesome para el ícono de correo -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div id="cv">
     <header>
         <h1>Mi Currículum Vitae</h1>
         <div style="margin-top: 15px;">
-            <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV" title="Enviar correo a cynthiasantos@ufm.edu" style="display: inline-block; background: #ea4335; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
+            <!-- Icono de correo -->
+            <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV" title="Enviar correo a cynthiasantos@ufm.edu" style="display: inline-block; background: #ea4335; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;" target="_blank">
+                <!-- Ícono de correo usando Font Awesome -->
+                <i class="fas fa-envelope"></i>
             </a>
         </div>
     </header>
-    
+
     <nav>
         <ul>
             <li><a href="#perfil">Perfil</a></li>
@@ -59,7 +61,6 @@
                     <li>HTML</li>
                     <li>CSS</li>
                     <li>SQL</li>
-                    
                 </ol>
             </article>
         </section>
@@ -90,6 +91,7 @@
         <p>&copy; 2025 Mi CV</p>
     </footer>
     </div>
+
     <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF" style="position:fixed; right:16px; bottom:16px; background:#e74c3c; color:#fff; padding:12px 16px; border-radius:9999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.2); font-weight:600; z-index:1000;">⬇️ Descargar</a>
 
     <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
