@@ -8,158 +8,117 @@
     <!-- Agregar Font Awesome para el ícono de correo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
-    <div id="cv">
-    <header>
-        <h1>Mi Currículum Vitae</h1>
-        <div style="margin-top: 15px;">
-            <!-- Icono de correo -->
-            <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV" title="Enviar correo a cynthiasantos@ufm.edu" style="display: inline-block; background: #ea4335; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;" target="_blank">
-                <!-- Ícono de correo usando Font Awesome -->
-                <i class="fas fa-envelope"></i>
-            </a>
-            <!-- Icono de GitHub -->
-            <a href="https://github.com/Cynthiss" title="Ver perfil de GitHub" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #333; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;">
-                <i class="fab fa-github"></i>
-            </a>
-            <!-- Icono de LinkedIn -->
-            <a href="https://www.linkedin.com/in/cynthia-michelle-santos-letona-1704852ba" title="Ver perfil de LinkedIn" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #0077b5; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </header>
+<body style="margin: 0; padding: 20px; font-family: Arial, sans-serif; background: #f5f5f5;">
+    <div id="cv" style="max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+        
+        <header style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #3498db;">
+            <h1 style="color: #2c3e50; margin-bottom: 10px;">Mi Currículum Vitae</h1>
+            <div style="margin-top: 15px;">
+                <!-- Icono de correo -->
+                <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV" title="Enviar correo a cynthiasantos@ufm.edu" style="display: inline-block; background: #ea4335; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <!-- Icono de GitHub -->
+                <a href="https://github.com/Cynthiss" title="Ver perfil de GitHub" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #333; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;">
+                    <i class="fab fa-github"></i>
+                </a>
+                <!-- Icono de LinkedIn -->
+                <a href="https://www.linkedin.com/in/cynthia-michelle-santos-letona-1704852ba" title="Ver perfil de LinkedIn" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #0077b5; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </header>
 
-    <nav>
-        <ul>
-            <li><a href="#perfil">Perfil</a></li>
-            <li><a href="#soft-skills">Habilidades</a></li>
-        </ul>
-    </nav>
-    
-    <main>
-        <section id="perfil">
-            <h2>Perfil Profesional</h2>
-            <article>
-                <img src="CV.jpeg" alt="Foto de Perfil" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 20px;">
-                <p>Desarrollador web apasionado.</p>
-            </article>
-        </section>
+        <nav style="background: #ecf0f1; padding: 15px; margin-bottom: 25px; border-radius: 5px;">
+            <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 20px;">
+                <li><a href="#perfil" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Perfil</a></li>
+                <li><a href="#soft-skills" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Habilidades</a></li>
+                <li><a href="#lenguajes" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Lenguajes</a></li>
+                <li><a href="#tecnologias" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Tecnologías</a></li>
+            </ul>
+        </nav>
         
-        <section id="soft-skills">
-            <h2>Soft Skills</h2>
-            <article>
-                <ol>
-                    <li>Comunicación efectiva</li>
-                    <li>Trabajo en equipo</li>
-                    <li>Resolución de problemas</li>
-                    <li>Gestión del tiempo</li>
-                    <li>Adaptabilidad</li>
-                    <li>Creatividad</li>
-                    <li>Liderazgo</li>
-                    <li>Pensamiento crítico</li>
-                </ol>
-            </article>
-        </section>
+        <main>
+            <section id="perfil" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #3498db;">
+                <h2 style="color: #2c3e50; margin-top: 0;">Perfil Profesional</h2>
+                <article>
+                    <img src="CV.jpeg" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+                    <p style="margin: 0; color: #2c3e50;">Desarrollador web apasionado con experiencia en tecnologías modernas.</p>
+                </article>
+            </section>
+            
+            <section id="soft-skills" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #e74c3c;">
+                <h2 style="color: #2c3e50; margin-top: 0;">Soft Skills</h2>
+                <article>
+                    <ol style="color: #2c3e50; line-height: 1.6;">
+                        <li>Comunicación efectiva</li>
+                        <li>Trabajo en equipo</li>
+                        <li>Resolución de problemas</li>
+                        <li>Gestión del tiempo</li>
+                        <li>Adaptabilidad</li>
+                        <li>Creatividad</li>
+                        <li>Liderazgo</li>
+                        <li>Pensamiento crítico</li>
+                    </ol>
+                </article>
+            </section>
+            
+            <section id="lenguajes" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #f39c12;">
+                <h2 style="color: #2c3e50; margin-top: 0;">Lenguajes de Programación</h2>
+                <article>
+                    <ol style="color: #2c3e50; line-height: 1.6;">
+                        <li>Python</li>
+                        <li>C#</li>
+                        <li>C++</li>
+                        <li>SQL</li>
+                    </ol>
+                </article>
+            </section>
+            
+            <section id="tecnologias" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #9b59b6;">
+                <h2 style="color: #2c3e50; margin-top: 0;">Tecnologías y Herramientas</h2>
+                <article>
+                    <ol style="color: #2c3e50; line-height: 1.6;">
+                        <li>Docker</li>
+                        <li>Postman</li>
+                        <li>Firebase</li>
+                        <li>React.js</li>
+                        <li>Node.js</li>
+                        <li>GitHub</li>
+                        <li>MongoDB</li>
+                        <li>AWS</li>
+                    </ol>
+                </article>
+            </section>
+            
+            <aside style="padding: 20px; background: #ecf0f1; border-radius: 5px; border-left: 4px solid #95a5a6;">
+                <h3 style="color: #2c3e50; margin-top: 0;">Información Adicional</h3>
+                <p style="color: #2c3e50; margin: 0;">Datos complementarios sobre mi perfil profesional.</p>
+            </aside>
+        </main>
         
-        <section id="lenguajes">
-            <h2>Lenguajes de Programación</h2>
-            <article>
-                <ol>
-                    <li>Python</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>SQL</li>
-                </ol>
-            </article>
-        </section>
-        
-        <section id="tecnologias">
-            <h2>Tecnologías y Herramientas</h2>
-            <article>
-                <ol>
-                    <li>Docker</li>
-                    <li>Postman</li>
-                    <li>Firebase</li>
-                    <li>React.js</li>
-                    <li>Node.js</li>
-                    <li>GitHub</li>
-                    <li>MongoDB</li>
-                    <li>AWS</li>
-                </ol>
-            </article>
-        </section>
-        
-        <aside>
-            <h3>Información Adicional</h3>
-            <p>Datos complementarios.</p>
-        </aside>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 Mi CV</p>
-    </footer>
+        <footer style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #bdc3c7;">
+            <p style="color: #7f8c8d; margin: 0;">&copy; 2025 Mi CV</p>
+        </footer>
     </div>
 
     <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF" style="position:fixed; right:16px; bottom:16px; background:#e74c3c; color:#fff; padding:12px 16px; border-radius:9999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.2); font-weight:600; z-index:1000;">⬇️ Descargar</a>
 
-    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
     <script>
-      (function () {
-        function waitForImages(container) {
-          const images = Array.from(container.querySelectorAll('img'));
-          if (images.length === 0) return Promise.resolve();
-          return Promise.all(images.map(img => {
-            if (img.complete) return Promise.resolve();
-            return new Promise((resolve) => {
-              img.onload = () => resolve();
-              img.onerror = () => resolve();
-            });
-          }));
-        }
-
-        async function descargarPDF() {
-          const element = document.getElementById('cv');
-          if (!element) return alert('No se encontró el contenedor del CV (#cv).');
-
-          const options = {
-            margin: 0.5,
-            filename: 'Mi_CV.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true, allowTaint: true, backgroundColor: '#ffffff' },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-          };
-
-          // Esperar a que carguen las imágenes para evitar páginas en blanco
-          await waitForImages(element);
-
-          return html2pdf().set(options).from(element).save();
-        }
-
-        const btn = document.getElementById('btn-pdf');
-        if (btn) {
-          btn.addEventListener('click', async function (e) {
+        document.getElementById('btn-pdf').addEventListener('click', function(e) {
             e.preventDefault();
-            if (typeof html2pdf === 'undefined') {
-              alert('No se pudo cargar html2pdf. Verifica tu conexión a Internet.');
-              return;
-            }
-            btn.setAttribute('aria-busy', 'true');
-            const originalText = btn.textContent;
-            btn.textContent = 'Generando…';
-            btn.style.pointerEvents = 'none';
-            try {
-              await descargarPDF();
-            } catch (err) {
-              console.error('Error al generar PDF:', err);
-              alert('Ocurrió un error al generar el PDF. Revisa la consola.');
-            } finally {
-              btn.textContent = originalText;
-              btn.style.pointerEvents = '';
-              btn.removeAttribute('aria-busy');
-            }
-          });
-        }
-      })();
+            
+            // Ocultar el botón de descarga para que no aparezca en el PDF
+            this.style.display = 'none';
+            
+            // Imprimir la página (se puede guardar como PDF)
+            window.print();
+            
+            // Mostrar el botón nuevamente después de imprimir
+            setTimeout(() => {
+                this.style.display = 'block';
+            }, 1000);
+        });
     </script>
 </body>
 </html>
