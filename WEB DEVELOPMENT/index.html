@@ -7,50 +7,51 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E💻%3C/text%3E%3C/svg%3E">
     <!-- Agregar Font Awesome para el ícono de correo -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body style="margin: 0; padding: 20px; font-family: Arial, sans-serif; background: #f5f5f5;">
-    <div id="cv" style="max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+    <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+     <div id="cv">
         
-        <header style="text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid #3498db;">
-            <h1 style="color: #2c3e50; margin-bottom: 10px;">Mi Currículum Vitae</h1>
-            <div style="margin-top: 15px;">
+        <header class="site-header">
+            <h1>Mi Currículum Vitae</h1>
+            <div class="social-links">
                 <!-- Icono de correo -->
-                <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV" title="Enviar correo a cynthiasantos@ufm.edu" style="display: inline-block; background: #ea4335; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;" target="_blank">
+                <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV" title="Enviar correo a cynthiasantos@ufm.edu" class="icon-btn email" target="_blank">
                     <i class="fas fa-envelope"></i>
                 </a>
                 <!-- Icono de GitHub -->
-                <a href="https://github.com/Cynthiss" title="Ver perfil de GitHub" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #333; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;">
+                <a href="https://github.com/Cynthiss" title="Ver perfil de GitHub" target="_blank" rel="noopener noreferrer" class="icon-btn github">
                     <i class="fab fa-github"></i>
                 </a>
                 <!-- Icono de LinkedIn -->
-                <a href="https://www.linkedin.com/in/cynthia-michelle-santos-letona-1704852ba" title="Ver perfil de LinkedIn" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #0077b5; color: white; padding: 10px 15px; border-radius: 50%; text-decoration: none; margin-right: 10px; font-size: 18px;">
+                <a href="https://www.linkedin.com/in/cynthia-michelle-santos-letona-1704852ba" title="Ver perfil de LinkedIn" target="_blank" rel="noopener noreferrer" class="icon-btn linkedin">
                     <i class="fab fa-linkedin"></i>
                 </a>
             </div>
         </header>
 
-        <nav style="background: #ecf0f1; padding: 15px; margin-bottom: 25px; border-radius: 5px;">
-            <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 20px;">
-                <li><a href="#perfil" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Perfil</a></li>
-                <li><a href="#soft-skills" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Habilidades</a></li>
-                <li><a href="#lenguajes" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Lenguajes</a></li>
-                <li><a href="#tecnologias" style="color: #2c3e50; text-decoration: none; font-weight: bold;">Tecnologías</a></li>
+        <nav class="site-nav">
+            <ul class="menu">
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#soft-skills">Habilidades</a></li>
+                <li><a href="#lenguajes">Lenguajes</a></li>
+                <li><a href="#tecnologias">Tecnologías</a></li>
             </ul>
         </nav>
         
         <main>
-            <section id="perfil" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #3498db;">
-                <h2 style="color: #2c3e50; margin-top: 0;">Perfil Profesional</h2>
+            <section id="perfil" class="card border-primary">
+                <h2>Perfil Profesional</h2>
                 <article>
-                    <img src="CV.jpeg" alt="Foto de Perfil" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
-                    <p style="margin: 0; color: #2c3e50;">Desarrollador web apasionado con experiencia en tecnologías modernas.</p>
+                    <img src="CV.jpeg" alt="Foto de Perfil" class="avatar">
+                    <p>Desarrollador web apasionado con experiencia en tecnologías modernas.</p>
                 </article>
             </section>
             
-            <section id="soft-skills" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #e74c3c;">
-                <h2 style="color: #2c3e50; margin-top: 0;">Soft Skills</h2>
+            <section id="soft-skills" class="card border-danger">
+                <h2>Soft Skills</h2>
                 <article>
-                    <ol style="color: #2c3e50; line-height: 1.6;">
+                    <ol>
                         <li>Comunicación efectiva</li>
                         <li>Trabajo en equipo</li>
                         <li>Resolución de problemas</li>
@@ -63,10 +64,10 @@
                 </article>
             </section>
             
-            <section id="lenguajes" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #f39c12;">
-                <h2 style="color: #2c3e50; margin-top: 0;">Lenguajes de Programación</h2>
+            <section id="lenguajes" class="card border-warning">
+                <h2>Lenguajes de Programación</h2>
                 <article>
-                    <ol style="color: #2c3e50; line-height: 1.6;">
+                    <ol>
                         <li>Python</li>
                         <li>C#</li>
                         <li>C++</li>
@@ -75,10 +76,10 @@
                 </article>
             </section>
             
-            <section id="tecnologias" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #9b59b6;">
-                <h2 style="color: #2c3e50; margin-top: 0;">Tecnologías y Herramientas</h2>
+            <section id="tecnologias" class="card border-purple">
+                <h2>Tecnologías y Herramientas</h2>
                 <article>
-                    <ol style="color: #2c3e50; line-height: 1.6;">
+                    <ol>
                         <li>Docker</li>
                         <li>Postman</li>
                         <li>Firebase</li>
@@ -91,101 +92,101 @@
                 </article>
             </section>
             
-            <section id="educacion" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #27ae60;">
-                <h2 style="color: #2c3e50; margin-top: 0;">Educación</h2>
+            <section id="educacion" class="card border-green">
+                <h2>Educación</h2>
                 <article>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <caption style="caption-side: top; text-align: left; padding: 8px 0; color: #2c3e50;">Educación: años, institución y título obtenido</caption>
+                    <table class="table">
+                        <caption>Educación: años, institución y título obtenido</caption>
                         <thead>
-                            <tr style="background:#ecf0f1;">
-                                <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Año</th>
-                                <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Institución</th>
-                                <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Título obtenido</th>
+                            <tr>
+                                <th scope="col">Año</th>
+                                <th scope="col">Institución</th>
+                                <th scope="col">Título obtenido</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">2023</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Universidad Francisco Marroquín</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Licenciatura en Ingeniería en Ciencias de la Computación</td>
+                                <td>2023</td>
+                                <td>Universidad Francisco Marroquín</td>
+                                <td>Licenciatura en Ingeniería en Ciencias de la Computación</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">2022</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Colegio Valle del Saber</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Bachiller en computación con orientación científica</td>
+                                <td>2022</td>
+                                <td>Colegio Valle del Saber</td>
+                                <td>Bachiller en computación con orientación científica</td>
                             </tr>
                         </tbody>
                     </table>
                 </article>
             </section>
 
-            <section id="experiencia" style="margin-bottom: 25px; padding: 20px; background: #f8f9fa; border-radius: 5px; border-left: 4px solid #16a085;">
-                <h2 style="color: #2c3e50; margin-top: 0;">Experiencia Laboral</h2>
+            <section id="experiencia" class="card border-teal">
+                <h2>Experiencia Laboral</h2>
                 <article>
-                    <table style="width: 100%; border-collapse: collapse;">
-                        <caption style="caption-side: top; text-align: left; padding: 8px 0; color: #2c3e50;">Experiencia laboral: periodo, empresa y puesto</caption>
+                    <table class="table">
+                        <caption>Experiencia laboral: periodo, empresa y puesto</caption>
                         <thead>
-                            <tr style="background:#ecf0f1;">
-                                <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Periodo</th>
-                                <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Empresa</th>
-                                <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Puesto</th>
+                            <tr>
+                                <th scope="col">Periodo</th>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Puesto</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">2024 – 2025</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Tech Solutions S.A.</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Desarrolladora Frontend</td>
+                                <td>2024 – 2025</td>
+                                <td>Tech Solutions S.A.</td>
+                                <td>Desarrolladora Frontend</td>
                             </tr>
                             <tr>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">2023 – 2024</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Innovación Digital</td>
-                                <td style="padding: 10px; border-bottom:1px solid #eee;">Practicante de Desarrollo</td>
+                                <td>2023 – 2024</td>
+                                <td>Innovación Digital</td>
+                                <td>Practicante de Desarrollo</td>
                             </tr>
                         </tbody>
                     </table>
                 </article>
             </section>
             
-            <aside style="padding: 20px; background: #ecf0f1; border-radius: 5px; border-left: 4px solid #95a5a6;">
-                <h3 style="color: #2c3e50; margin-top: 0;">Información Adicional</h3>
-                <p style="color: #2c3e50; margin: 0;">Datos complementarios sobre mi perfil profesional.</p>
-                <table style="width: 100%; border-collapse: collapse; margin-top: 12px;">
-                    <caption style="caption-side: top; text-align: left; padding: 8px 0; color: #2c3e50;">Certificados: institución, certificado y año</caption>
+            <aside class="aside-card">
+                <h3>Información Adicional</h3>
+                <p>Datos complementarios sobre mi perfil profesional.</p>
+                <table class="table" style="margin-top: 12px;">
+                    <caption>Certificados: institución, certificado y año</caption>
                     <thead>
-                        <tr style="background:#ecf0f1;">
-                            <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Institución</th>
-                            <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Certificado</th>
-                            <th scope="col" style="text-align:left; padding: 10px; border-bottom:1px solid #ddd;">Año</th>
+                        <tr>
+                            <th scope="col">Institución</th>
+                            <th scope="col">Certificado</th>
+                            <th scope="col">Año</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">Scruminc</td>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">Scrum Master</td>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">2024</td>
+                            <td>Scruminc</td>
+                            <td>Scrum Master</td>
+                            <td>2024</td>
                         </tr>
                         <tr>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">Ingelearn</td>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">Industria 4.0</td>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">2024</td>
+                            <td>Ingelearn</td>
+                            <td>Industria 4.0</td>
+                            <td>2024</td>
                         </tr>
                         <tr>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">Franklin Covey</td>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">The 7 Habits of Highly Effective People</td>
-                            <td style="padding: 10px; border-bottom:1px solid #eee;">2021</td>
+                            <td>Franklin Covey</td>
+                            <td>The 7 Habits of Highly Effective People</td>
+                            <td>2021</td>
                         </tr>
                     </tbody>
                 </table>
             </aside>
         </main>
         
-        <footer style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #bdc3c7;">
-            <p style="color: #7f8c8d; margin: 0;">&copy; 2025 Mi CV</p>
+        <footer class="site-footer">
+            <p>&copy; 2025 Mi CV</p>
         </footer>
     </div>
 
-    <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF" style="position:fixed; right:16px; bottom:16px; background:#e74c3c; color:#fff; padding:12px 16px; border-radius:9999px; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,.2); font-weight:600; z-index:1000;">⬇️ Descargar</a>
+    <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF">⬇️ Descargar</a>
 
     <script>
         document.getElementById('btn-pdf').addEventListener('click', function(e) {
