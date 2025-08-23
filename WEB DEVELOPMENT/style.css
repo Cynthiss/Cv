@@ -40,3 +40,36 @@ body {
 	transform: translateY(-5px);
 	box-shadow: var(--shadow-md);
 }
+
+/* Navigation */
+.site-nav {
+	background: linear-gradient(135deg, var(--color-nav), #f8f9fa);
+	padding: 20px;
+	margin-bottom: 35px;
+	border-radius: 12px;
+	box-shadow: var(--shadow-sm);
+}
+
+.menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+
+.menu a {
+	color: var(--color-text);
+	text-decoration: none;
+	font-weight: 600;
+	padding: 8px 16px;
+	border-radius: 25px;
+	transition: all 0.3s ease;
+}
+
+.menu a:hover { 
+	color: var(--color-primary); 
+	background: rgba(52, 152, 219, 0.1);
+	transform: translateY(-2px);
+}
