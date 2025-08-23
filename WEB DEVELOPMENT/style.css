@@ -136,3 +136,43 @@ ol li::marker {
 .table tbody tr:hover td {
 	background-color: rgba(52, 152, 219, 0.05);
 }
+
+/* Aside */
+.aside-card {
+	padding: 25px;
+	background: linear-gradient(135deg, var(--color-nav), #f8f9fa);
+	border-radius: 12px;
+	border-left: 5px solid var(--color-gray);
+	box-shadow: var(--shadow-sm);
+	margin-top: 30px;
+}
+
+.aside-card .table { 
+	margin-top: 15px; 
+}
+
+/* Footer */
+.site-footer {
+	text-align: center;
+	margin-top: 40px;
+	padding-top: 30px;
+	border-top: 3px solid #bdc3c7;
+	position: relative;
+}
+
+.site-footer::before {
+	content: '';
+	position: absolute;
+	top: -3px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 60px;
+	height: 3px;
+	background: linear-gradient(90deg, var(--color-primary), var(--color-purple));
+	border-radius: 2px;
+}
+
+.site-footer p { 
+	color: var(--color-muted); 
+	font-size: 1.05rem;
+}
