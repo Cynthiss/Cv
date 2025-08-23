@@ -98,3 +98,41 @@ ol li::marker {
 	color: var(--color-primary);
 	font-weight: bold;
 }
+
+/* Tables */
+.table { 
+	width: 100%; 
+	border-collapse: collapse; 
+	margin-top: 15px;
+}
+
+.table caption { 
+	caption-side: top; 
+	text-align: left; 
+	padding: 12px 0; 
+	color: var(--color-text);
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+.table thead tr { 
+	background: linear-gradient(135deg, var(--color-nav), #e9ecef); 
+}
+
+.table th { 
+	text-align: left; 
+	padding: 15px 12px; 
+	border-bottom: 2px solid var(--color-primary);
+	font-weight: 600;
+	color: var(--color-text);
+}
+
+.table td { 
+	padding: 12px; 
+	border-bottom: 1px solid #e9ecef;
+	transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover td {
+	background-color: rgba(52, 152, 219, 0.05);
+}
