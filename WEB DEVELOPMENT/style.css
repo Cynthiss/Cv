@@ -313,10 +313,21 @@ p {
 }
 
 /* Main Content */
+/* GRID USO EN MAIN */
 main {
 	padding: var(--spacing-10);
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: var(--spacing-10);
+	align-items: start;
 }
 
+/* Responsive: desactivar grid en pantallas pequeñas */
+@media (max-width: 900px) {
+	main {
+		display: block;
+	}
+}
 /* Cards */
 .card {
 	margin-bottom: var(--spacing-8);
