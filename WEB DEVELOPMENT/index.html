@@ -1,208 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi CV</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E💻%3C/text%3E%3C/svg%3E">
-    <!-- Agregar Font Awesome para el ícono de correo -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
- </head>
- <body>
-     <div id="cv">
-        
-        <header class="site-header">
-            <h1>Mi Currículum Vitae</h1>
-            <div class="social-links">
-                <!-- Icono de correo -->
-                <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV" title="Enviar correo a cynthiasantos@ufm.edu" class="icon-btn email" target="_blank">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <!-- Icono de GitHub -->
-                <a href="https://github.com/Cynthiss" title="Ver perfil de GitHub" target="_blank" rel="noopener noreferrer" class="icon-btn github">
-                    <i class="fab fa-github"></i>
-                </a>
-                <!-- Icono de LinkedIn -->
-                <a href="https://www.linkedin.com/in/cynthia-michelle-santos-letona-1704852ba" title="Ver perfil de LinkedIn" target="_blank" rel="noopener noreferrer" class="icon-btn linkedin">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-        </header>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi CV</title>
 
-        <nav class="site-nav">
-            <ul class="menu">
-                <li><a href="#perfil">Perfil</a></li>
-                <li><a href="#soft-skills">Habilidades</a></li>
-                <li><a href="#lenguajes">Lenguajes</a></li>
-                <li><a href="#tecnologias">Tecnologías</a></li>
-            </ul>
-        </nav>
-        
-        <main>
-            <section id="perfil" class="card border-primary">
-                <h2>Perfil Profesional</h2>
-                <article>
-                    <img src="CV.jpeg" alt="Foto de Perfil" class="avatar">
-                    <p>Desarrollador web apasionado con experiencia en tecnologías modernas.</p>
-                </article>
-            </section>
-            
-            <section id="soft-skills" class="card border-danger">
-                <h2>Soft Skills</h2>
-                <article>
-                    <ol>
-                        <li>Comunicación efectiva</li>
-                        <li>Trabajo en equipo</li>
-                        <li>Resolución de problemas</li>
-                        <li>Gestión del tiempo</li>
-                        <li>Adaptabilidad</li>
-                        <li>Creatividad</li>
-                        <li>Liderazgo</li>
-                        <li>Pensamiento crítico</li>
-                    </ol>
-                </article>
-            </section>
-            
-            <section id="lenguajes" class="card border-warning">
-                <h2>Lenguajes de Programación</h2>
-                <article>
-                    <ol>
-                        <li>Python</li>
-                        <li>C#</li>
-                        <li>C++</li>
-                        <li>SQL</li>
-                    </ol>
-                </article>
-            </section>
-            
-            <section id="tecnologias" class="card border-purple">
-                <h2>Tecnologías y Herramientas</h2>
-                <article>
-                    <ol>
-                        <li>Docker</li>
-                        <li>Postman</li>
-                        <li>Firebase</li>
-                        <li>React.js</li>
-                        <li>Node.js</li>
-                        <li>GitHub</li>
-                        <li>MongoDB</li>
-                        <li>AWS</li>
-                    </ol>
-                </article>
-            </section>
-            
-            <section id="educacion" class="card border-green">
-                <h2>Educación</h2>
-                <article>
-                    <table class="table">
-                        <caption>Educación: años, institución y título obtenido</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">Año</th>
-                                <th scope="col">Institución</th>
-                                <th scope="col">Título obtenido</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2023</td>
-                                <td>Universidad Francisco Marroquín</td>
-                                <td>Licenciatura en Ingeniería en Ciencias de la Computación</td>
-                            </tr>
-                            <tr>
-                                <td>2022</td>
-                                <td>Colegio Valle del Saber</td>
-                                <td>Bachiller en computación con orientación científica</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </article>
-            </section>
+  <!-- Favicon (emoji como SVG embebido) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E💻%3C/text%3E%3C/svg%3E">
 
-            <section id="experiencia" class="card border-teal">
-                <h2>Experiencia Laboral</h2>
-                <article>
-                    <table class="table">
-                        <caption>Experiencia laboral: periodo, empresa y puesto</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">Periodo</th>
-                                <th scope="col">Empresa</th>
-                                <th scope="col">Puesto</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2024 – 2025</td>
-                                <td>Tech Solutions S.A.</td>
-                                <td>Desarrolladora Frontend</td>
-                            </tr>
-                            <tr>
-                                <td>2023 – 2024</td>
-                                <td>Innovación Digital</td>
-                                <td>Practicante de Desarrollo</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </article>
-            </section>
-            
-            <aside class="aside-card">
-                <h3>Información Adicional</h3>
-                <p>Datos complementarios sobre mi perfil profesional.</p>
-                <table class="table" style="margin-top: 12px;">
-                    <caption>Certificados: institución, certificado y año</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Institución</th>
-                            <th scope="col">Certificado</th>
-                            <th scope="col">Año</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Scruminc</td>
-                            <td>Scrum Master</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td>Ingelearn</td>
-                            <td>Industria 4.0</td>
-                            <td>2024</td>
-                        </tr>
-                        <tr>
-                            <td>Franklin Covey</td>
-                            <td>The 7 Habits of Highly Effective People</td>
-                            <td>2021</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </aside>
-        </main>
-        
-        <footer class="site-footer">
-            <p>&copy; 2025 Mi CV</p>
-        </footer>
-    </div>
+  <!-- Font Awesome (iconos) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
 
-    <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF">⬇️ Descargar</a>
+  <!-- Tu CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
 
-    <script>
-        document.getElementById('btn-pdf').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Ocultar el botón de descarga para que no aparezca en el PDF
-            this.style.display = 'none';
-            
-            // Imprimir la página (se puede guardar como PDF)
-            window.print();
-            
-            // Mostrar el botón nuevamente después de imprimir
-            setTimeout(() => {
-                this.style.display = 'block';
-            }, 1000);
-        });
-    </script>
+  <div id="cv">
+    <header class="site-header">
+      <h1>Mi Currículum Vitae</h1>
+      <div class="social-links">
+        <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV"
+           title="Enviar correo a cynthiasantos@ufm.edu"
+           class="icon-btn email" target="_blank">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/Cynthiss"
+           title="Ver perfil de GitHub"
+           target="_blank" rel="noopener noreferrer"
+           class="icon-btn github">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/cynthia-michelle-santos-letona-1704852ba"
+           title="Ver perfil de LinkedIn"
+           target="_blank" rel="noopener noreferrer"
+           class="icon-btn linkedin">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </header>
+
+    <nav class="site-nav">
+      <ul class="menu">
+        <li><a href="#perfil">Perfil</a></li>
+        <li><a href="#soft-skills">Habilidades</a></li>
+        <li><a href="#lenguajes">Lenguajes</a></li>
+        <li><a href="#tecnologias">Tecnologías</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="perfil" class="card border-primary">
+        <h2>Perfil Profesional</h2>
+        <article>
+          <img src="CV.jpeg" alt="Foto de Perfil" class="avatar">
+          <p>Desarrollador web apasionado con experiencia en tecnologías modernas.</p>
+        </article>
+      </section>
+
+      <section id="soft-skills" class="card border-danger">
+        <h2>Soft Skills</h2>
+        <article>
+          <ol>
+            <li>Comunicación efectiva</li>
+            <li>Trabajo en equipo</li>
+            <li>Resolución de problemas</li>
+            <li>Gestión del tiempo</li>
+            <li>Adaptabilidad</li>
+            <li>Creatividad</li>
+            <li>Liderazgo</li>
+            <li>Pensamiento crítico</li>
+          </ol>
+        </article>
+      </section>
+
+      <section id="lenguajes" class="card border-warning">
+        <h2>Lenguajes de Programación</h2>
+        <article>
+          <ol>
+            <li>Python</li>
+            <li>C#</li>
+            <li>C++</li>
+            <li>SQL</li>
+          </ol>
+        </article>
+      </section>
+
+      <section id="tecnologias" class="card border-purple">
+        <h2>Tecnologías y Herramientas</h2>
+        <article>
+          <ol>
+            <li>Docker</li>
+            <li>Postman</li>
+            <li>Firebase</li>
+            <li>React.js</li>
+            <li>Node.js</li>
+            <li>GitHub</li>
+            <li>MongoDB</li>
+            <li>AWS</li>
+          </ol>
+        </article>
+      </section>
+
+      <section id="educacion" class="card border-green">
+        <h2>Educación</h2>
+        <article>
+          <table class="table">
+            <caption>Educación: años, institución y título obtenido</caption>
+            <thead>
+              <tr>
+                <th scope="col">Año</th>
+                <th scope="col">Institución</th>
+                <th scope="col">Título obtenido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2023</td>
+                <td>Universidad Francisco Marroquín</td>
+                <td>Licenciatura en Ingeniería en Ciencias de la Computación</td>
+              </tr>
+              <tr>
+                <td>2022</td>
+                <td>Colegio Valle del Saber</td>
+                <td>Bachiller en computación con orientación científica</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section id="experiencia" class="card border-teal">
+        <h2>Experiencia Laboral</h2>
+        <article>
+          <table class="table">
+            <caption>Experiencia laboral: periodo, empresa y puesto</caption>
+            <thead>
+              <tr>
+                <th scope="col">Periodo</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Puesto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024 – 2025</td>
+                <td>Tech Solutions S.A.</td>
+                <td>Desarrolladora Frontend</td>
+              </tr>
+              <tr>
+                <td>2023 – 2024</td>
+                <td>Innovación Digital</td>
+                <td>Practicante de Desarrollo</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <aside class="aside-card">
+        <h3>Información Adicional</h3>
+        <p>Datos complementarios sobre mi perfil profesional.</p>
+        <table class="table" style="margin-top: 12px;">
+          <caption>Certificados: institución, certificado y año</caption>
+          <thead>
+            <tr>
+              <th scope="col">Institución</th>
+              <th scope="col">Certificado</th>
+              <th scope="col">Año</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Scruminc</td>
+              <td>Scrum Master</td>
+              <td>2024</td>
+            </tr>
+            <tr>
+              <td>Ingelearn</td>
+              <td>Industria 4.0</td>
+              <td>2024</td>
+            </tr>
+            <tr>
+              <td>Franklin Covey</td>
+              <td>The 7 Habits of Highly Effective People</td>
+              <td>2021</td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Mi CV</p>
+    </footer>
+  </div>
+
+  <!-- Botón Descargar PDF -->
+  <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF">⬇️ Descargar</a>
+
+  <script>
+    document.getElementById('btn-pdf').addEventListener('click', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';   // ocultar botón en impresión
+      window.print();
+      setTimeout(() => { this.style.display = 'block'; }, 600);
+    });
+  </script>
 </body>
 </html>
