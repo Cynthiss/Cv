@@ -55,6 +55,9 @@
 */
 
 :root {
+	/* Table Animation */
+	--table-fade-duration: 0.8s;
+	--table-fade-ease: cubic-bezier(0.23, 1, 0.32, 1);
 	/* Sophisticated Color Palette */
 	--color-primary: #1e40af;
 	--color-primary-light: #3b82f6;
@@ -455,14 +458,49 @@ ol li::marker {
 }
 
 /* Tables */
-.table { 
-	width: 100%; 
-	border-collapse: collapse; 
+.table-educacion {
+	--table-main-bg: linear-gradient(135deg, #e0e7ff 80%, #dbeafe 100%);
+	--table-head-bg: linear-gradient(90deg, #1e40af 70%, #3b82f6 100%);
+	--table-row-hover: #e0e7ff;
+	--table-caption: #1e293b;
+	--table-border: #3b82f6;
+}
+.table-experiencia {
+	--table-main-bg: linear-gradient(135deg, #ccfbf1 80%, #99f6e4 100%);
+	--table-head-bg: linear-gradient(90deg, #0d9488 70%, #14b8a6 100%);
+	--table-row-hover: #99f6e4;
+	--table-caption: #134e4a;
+	--table-border: #14b8a6;
+}
+.table-certificados {
+	--table-main-bg: linear-gradient(135deg, #ede9fe 80%, #c7d2fe 100%);
+	--table-head-bg: linear-gradient(90deg, #7c3aed 70%, #a78bfa 100%);
+	--table-row-hover: #c7d2fe;
+	--table-caption: #4c1d95;
+	--table-border: #a78bfa;
+}
+.table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
 	margin-top: var(--spacing-6);
-	border: 1px solid var(--color-gray-200);
-	border-radius: var(--radius-lg);
+	border-radius: 1.2rem;
 	overflow: hidden;
-	box-shadow: var(--shadow-sm);
+	box-shadow: 0 4px 24px rgba(30,64,175,0.10), 0 1.5px 8px rgba(0,0,0,0.04);
+	background: var(--table-main-bg, linear-gradient(135deg, #f8fafc 80%, #e0e7ff 100%));
+	animation: tableFadeIn var(--table-fade-duration) var(--table-fade-ease);
+}
+.table caption {
+	caption-side: top;
+	text-align: left;
+	padding: var(--spacing-4) 0;
+	color: var(--table-caption, #1e293b);
+	font-weight: 700;
+	font-size: 1.15rem;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	border-bottom: 2px solid var(--table-border, #3b82f6);
+	background: none;
 }
 .table caption { 
 	caption-side: top;
@@ -475,49 +513,63 @@ ol li::marker {
 	letter-spacing: 0.5px;
 	border-bottom: 2px solid var(--color-primary);
 }
-.table thead tr { 
-	background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
-	color: white;
+.table thead tr {
+	background: var(--table-head-bg, linear-gradient(90deg, #1e40af 70%, #3b82f6 100%));
+	color: #fff;
+	font-size: 1.05rem;
 }
-.table th { 
-	text-align: left; 
-	padding: var(--spacing-5) var(--spacing-4); 
-	font-weight: 600;
-	color: white;
+.table th {
+	text-align: left;
+	padding: 1rem 1.2rem;
+	font-weight: 700;
+	color: #fff;
 	text-transform: uppercase;
-	letter-spacing: 0.3px;
-	font-size: var(--font-size-sm);
+	letter-spacing: 0.5px;
+	font-size: 1rem;
 	position: relative;
+	border-right: 1px solid var(--table-border, #3b82f6);
 }
-.table th::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: var(--spacing-4);
-	right: var(--spacing-4);
-	height: 2px;
-	background: rgba(255, 255, 255, 0.3);
+.table th:last-child {
+	border-right: none;
 }
 .table tbody tr {
-	transition: all var(--transition-normal);
-	border-bottom: 1px solid var(--color-gray-200);
+	transition: box-shadow 0.3s var(--table-fade-ease), transform 0.3s var(--table-fade-ease);
+	border-bottom: 1px solid #e0e7ff;
 }
-.table tbody tr:nth-child(even) { background-color: rgba(30, 64, 175, 0.02); }
+.table tbody tr:nth-child(even) {
+	background-color: #f1f5f9;
+}
 .table tbody tr:hover {
-	background-color: rgba(30, 64, 175, 0.08);
-	transform: translateX(4px);
-	box-shadow: var(--shadow-sm);
+	background-color: var(--table-row-hover, #e0e7ff);
+	transform: scale(1.01);
+	box-shadow: 0 2px 12px rgba(59,130,246,0.10);
 }
-.table td { 
-	padding: var(--spacing-5) var(--spacing-4); 
-	transition: all var(--transition-normal);
-	font-size: var(--font-size-base);
-	line-height: 1.6;
-	color: var(--color-gray-700);
+.table td {
+	padding: 1rem 1.2rem;
+	transition: color 0.3s var(--table-fade-ease);
+	font-size: 1.05rem;
+	line-height: 1.7;
+	color: #334155;
+	background: none;
 }
 .table tbody tr:hover td {
-	color: var(--color-primary);
-	font-weight: 500;
+	color: #1e40af;
+	font-weight: 600;
+}
+.table {
+	opacity: 0;
+	animation: tableFadeIn var(--table-fade-duration) var(--table-fade-ease) forwards;
+}
+
+@keyframes tableFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(24px) scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
 }
 
 /* Aside */
