@@ -55,6 +55,83 @@
 */
 
 :root {
+	/* Card Profile Custom Styles */
+	--card-profile-bg: linear-gradient(135deg, #f8fafc 70%, #e0e7ff 100%);
+	--card-profile-shadow: 0 8px 32px rgba(30,64,175,0.12);
+	--card-profile-radius: 1.5rem;
+	--card-profile-anim: 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+	--card-profile-border: 2px solid #3b82f6;
+	--card-profile-avatar-shadow: 0 2px 12px rgba(59,130,246,0.10);
+	--card-profile-btn-bg: #fff;
+	--card-profile-btn-hover: #3b82f6;
+	--card-profile-btn-shadow: 0 2px 8px rgba(30,64,175,0.08);
+/* Card Profile Modern Styles */
+.card-profile {
+	background: var(--card-profile-bg);
+	box-shadow: var(--card-profile-shadow);
+	border-radius: var(--card-profile-radius);
+	border: none;
+	animation: cardProfileFadeIn var(--card-profile-anim);
+	padding: 2.5rem 2rem 2rem 2rem;
+	margin: auto;
+	max-width: 480px;
+}
+.card-profile .avatar {
+	border: var(--card-profile-border);
+	box-shadow: var(--card-profile-avatar-shadow);
+	margin-bottom: 1.2rem;
+	background: #fff;
+}
+.card-profile .card-title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #1e293b;
+}
+.card-profile .card-subtitle {
+	font-size: 1rem;
+	color: #3b82f6;
+	font-weight: 500;
+	margin-bottom: 1rem;
+}
+.card-profile .card-text {
+	font-size: 1.08rem;
+	color: #334155;
+	margin-bottom: 1.5rem;
+}
+.card-profile .profile-social {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+.card-profile .profile-social a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--card-profile-btn-bg);
+	color: #3b82f6;
+	box-shadow: var(--card-profile-btn-shadow);
+	font-size: 1.25rem;
+	transition: background 0.3s, color 0.3s, transform 0.3s;
+	border: 1.5px solid #e0e7ff;
+}
+.card-profile .profile-social a:hover {
+	background: var(--card-profile-btn-hover);
+	color: #fff;
+	transform: scale(1.12);
+}
+@keyframes cardProfileFadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(32px) scale(0.97);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
 	/* Table Animation */
 	--table-fade-duration: 0.8s;
 	--table-fade-ease: cubic-bezier(0.23, 1, 0.32, 1);
