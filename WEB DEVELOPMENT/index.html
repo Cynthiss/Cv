@@ -17,10 +17,39 @@
   <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 430px)">
     <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 431px) and (max-width: 1024px)">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6VKHr8zWvZg9lF1Q1M6xA4l5/OF4p1F+M7B0Zl5Fv5Q" crossorigin="anonymous">
 </head>
 <body>
+    <!-- Botón de modo oscuro -->
+    <button id="darkModeToggle" class="btn btn-dark position-fixed" style="top: 1.5rem; right: 2rem; z-index: 999; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-moon"></i>
+    </button>
+    <script>
+      const toggleBtn = document.getElementById('darkModeToggle');
+      const root = document.documentElement;
+      const body = document.body;
+      let darkMode = false;
+      function setDarkMode(on) {
+        darkMode = on;
+        if (darkMode) {
+          body.classList.add('dark-mode');
+          document.getElementById('cv')?.classList.add('dark-mode');
+          document.querySelectorAll('.card-profile, .card, .aside-card, .menu, .nav-modern, .table, h1, h2, h3').forEach(el => el.classList.add('dark-mode'));
+          toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+          body.classList.remove('dark-mode');
+          document.getElementById('cv')?.classList.remove('dark-mode');
+          document.querySelectorAll('.card-profile, .card, .aside-card, .menu, .nav-modern, .table, h1, h2, h3').forEach(el => el.classList.remove('dark-mode'));
+          toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+      }
+      toggleBtn.addEventListener('click', () => setDarkMode(!darkMode));
+    </script>
 
-  <div id="cv">
+     <!-- Navbar Bootstrap -->
+  <!-- Navbar removed as requested -->
+     <div id="cv">
     <header class="site-header">
       <h1>Mi Currículum Vitae</h1>
       <div class="social-links">
@@ -45,21 +74,25 @@
     </header>
 
     <nav class="site-nav">
-      <ul class="menu">
-        <li><a href="#perfil">Perfil</a></li>
-        <li><a href="#soft-skills">Habilidades</a></li>
-        <li><a href="#lenguajes">Lenguajes</a></li>
-        <li><a href="#tecnologias">Tecnologías</a></li>
-      </ul>
-    </nav>
+      <nav class="site-nav">
+        <ul class="menu">
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#soft-skills">Habilidades</a></li>
+          <li><a href="#lenguajes">Lenguajes</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+        </ul>
+      </nav>
 
     <main>
-      <section id="perfil" class="card border-primary">
-        <h2>Perfil Profesional</h2>
-        <article>
-          <img src="CV.jpeg" alt="Foto de Perfil" class="avatar">
-          <p>Desarrollador web apasionado con experiencia en tecnologías modernas.</p>
-        </article>
+  <section id="perfil">
+        <div class="card-profile">
+          <div class="text-center">
+            <img src="CV.jpeg" alt="Foto de Perfil" class="avatar rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+            <h3 class="card-title mb-2">Cynthia Michelle Santos Letona</h3>
+            <h6 class="card-subtitle mb-3">Desarrolladora Web</h6>
+            <p class="card-text">Apasionada por la tecnología y el desarrollo web moderno. Experiencia en frontend y backend, siempre aprendiendo y mejorando.</p>
+          </div>
+        </div>
       </section>
 
       <section id="soft-skills" class="card border-danger">
@@ -109,7 +142,7 @@
       <section id="educacion" class="card border-green">
         <h2>Educación</h2>
         <article>
-          <table class="table">
+              <table class="table table-striped table-hover table-bordered align-middle table-educacion">
             <caption>Educación: años, institución y título obtenido</caption>
             <thead>
               <tr>
@@ -137,7 +170,7 @@
       <section id="experiencia" class="card border-teal">
         <h2>Experiencia Laboral</h2>
         <article>
-          <table class="table">
+              <table class="table table-striped table-hover table-bordered align-middle table-experiencia">
             <caption>Experiencia laboral: periodo, empresa y puesto</caption>
             <thead>
               <tr>
@@ -165,7 +198,7 @@
       <aside class="aside-card">
         <h3>Información Adicional</h3>
         <p>Datos complementarios sobre mi perfil profesional.</p>
-        <table class="table" style="margin-top: 12px;">
+  <table class="table table-striped table-hover table-bordered align-middle table-certificados" style="margin-top: 12px;">
           <caption>Certificados: institución, certificado y año</caption>
           <thead>
             <tr>
@@ -201,7 +234,9 @@
   </div>
 
   <!-- Botón Descargar PDF -->
-  <a href="#" id="btn-pdf" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF">⬇️ Descargar</a>
+    <a href="#" id="btn-pdf" class="btn btn-success btn-lg d-block mx-auto mt-4" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF">
+      <i class="fas fa-file-download me-2"></i> Descargar PDF
+    </a>
 
   <script>
     document.getElementById('btn-pdf').addEventListener('click', function(e) {
