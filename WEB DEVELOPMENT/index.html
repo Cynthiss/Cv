@@ -25,7 +25,32 @@
     <button id="darkModeToggle" class="btn btn-dark position-fixed" style="top: 1.5rem; right: 2rem; z-index: 999; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
       <i class="fas fa-moon"></i>
     </button>
+
+    <!-- Toast de saludo dinámico flotante mejorado -->
+    <div class="position-fixed" style="top: 20px; right: 20px; z-index: 9999;">
+      <div id="greetingToast" class="toast border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" 
+           style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                  color: white; 
+                  min-width: 220px; 
+                  max-width: 300px; 
+                  border-radius: 20px; 
+                  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+                  backdrop-filter: blur(10px);
+                  border: 1px solid rgba(255,255,255,0.2);">
+        <div class="toast-body d-flex align-items-center justify-content-between" 
+             style="font-size: 1.1rem; gap: 1rem; padding: 1rem 1.5rem;">
+          <div class="d-flex align-items-center" style="gap: 0.8rem;">
+            <span id="greetingIcon" class="fs-3" style="display: flex; align-items: center; opacity: 0.9;"></span>
+            <span id="greetingMessage" style="font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.3);"></span>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close" 
+                  style="opacity: 0.8; font-size: 0.8rem;"></button>
+        </div>
+      </div>
+    </div>
+
     <script>
+      // Modo oscuro
       const toggleBtn = document.getElementById('darkModeToggle');
       const root = document.documentElement;
       const body = document.body;
@@ -45,6 +70,62 @@
         }
       }
       toggleBtn.addEventListener('click', () => setDarkMode(!darkMode));
+
+      // Saludo dinámico con toast Bootstrap mejorado
+      function getGreetingAndIcon() {
+        const hour = new Date().getHours();
+        if (hour >= 6 && hour < 12) return { 
+          text: '¡Buenos días!', 
+          icon: '<i class="fas fa-coffee"></i>',
+          gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+        };
+        if (hour >= 12 && hour < 20) return { 
+          text: '¡Buenas tardes!', 
+          icon: '<i class="fas fa-sun"></i>',
+          gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+        };
+        return { 
+          text: '¡Buenas noches!', 
+          icon: '<i class="fas fa-moon"></i>',
+          gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        };
+      }
+      
+      document.addEventListener('DOMContentLoaded', function() {
+        const greeting = getGreetingAndIcon();
+        const greetingMessage = document.getElementById('greetingMessage');
+        const greetingIcon = document.getElementById('greetingIcon');
+        const toastEl = document.getElementById('greetingToast');
+        
+        // Actualizar contenido
+        greetingMessage.textContent = greeting.text;
+        greetingIcon.innerHTML = greeting.icon;
+        
+        // Aplicar gradiente dinámico
+        toastEl.style.background = greeting.gradient;
+        
+        // Asegura que el toast esté oculto por defecto
+        toastEl.classList.remove('show');
+        
+        // Mostrar el toast con animación suave
+        setTimeout(() => {
+          toastEl.style.transform = 'translateX(100%)';
+          toastEl.style.transition = 'transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+          
+          setTimeout(() => {
+            toastEl.classList.add('show');
+            toastEl.style.transform = 'translateX(0)';
+          }, 100);
+          
+          // Auto-hide después de 4 segundos
+          setTimeout(() => {
+            toastEl.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+              toastEl.classList.remove('show');
+            }, 500);
+          }, 4000);
+        }, 800); // Retardo inicial para mejor UX
+      });
     </script>
 
      <!-- Navbar Bootstrap -->
@@ -97,16 +178,25 @@
 
       <section id="soft-skills" class="card border-danger">
         <h2>Soft Skills</h2>
+        <div class="mb-3">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="text" id="searchSkills" class="form-control" placeholder="Buscar habilidades...">
+            <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
         <article>
-          <ol>
-            <li>Comunicación efectiva</li>
-            <li>Trabajo en equipo</li>
-            <li>Resolución de problemas</li>
-            <li>Gestión del tiempo</li>
-            <li>Adaptabilidad</li>
-            <li>Creatividad</li>
-            <li>Liderazgo</li>
-            <li>Pensamiento crítico</li>
+          <ol id="skillsList">
+            <li data-skill="comunicación efectiva">Comunicación efectiva</li>
+            <li data-skill="trabajo en equipo">Trabajo en equipo</li>
+            <li data-skill="resolución de problemas">Resolución de problemas</li>
+            <li data-skill="gestión del tiempo">Gestión del tiempo</li>
+            <li data-skill="adaptabilidad">Adaptabilidad</li>
+            <li data-skill="creatividad">Creatividad</li>
+            <li data-skill="liderazgo">Liderazgo</li>
+            <li data-skill="pensamiento crítico">Pensamiento crítico</li>
           </ol>
         </article>
       </section>
@@ -168,8 +258,13 @@
       </section>
 
       <section id="experiencia" class="card border-teal">
-        <h2>Experiencia Laboral</h2>
-        <article>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="mb-0">Experiencia Laboral</h2>
+          <button id="toggleExperiencia" class="btn btn-outline-primary btn-sm">
+            <i class="fas fa-eye" id="experienciaIcon"></i> <span id="experienciaText">Mostrar</span>
+          </button>
+        </div>
+        <article id="experienciaContent" style="display: none;">
               <table class="table table-striped table-hover table-bordered align-middle table-experiencia">
             <caption>Experiencia laboral: periodo, empresa y puesto</caption>
             <thead>
@@ -196,9 +291,30 @@
       </section>
 
       <aside class="aside-card">
-        <h3>Información Adicional</h3>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Información Adicional</h3>
+          <button id="toggleContacto" class="btn btn-outline-success btn-sm">
+            <i class="fas fa-address-card" id="contactoIcon"></i> <span id="contactoText">Mostrar Contacto</span>
+          </button>
+        </div>
         <p>Datos complementarios sobre mi perfil profesional.</p>
-  <table class="table table-striped table-hover table-bordered align-middle table-certificados" style="margin-top: 12px;">
+        
+        <!-- Información de contacto oculta por defecto -->
+        <div id="contactoContent" style="display: none;" class="mb-4">
+          <div class="card bg-light">
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-envelope me-2"></i>Información de Contacto</h5>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-phone me-2"></i>+502 1234-5678</li>
+                <li><i class="fas fa-envelope me-2"></i>cynthiasantos@ufm.edu</li>
+                <li><i class="fas fa-map-marker-alt me-2"></i>Guatemala City, Guatemala</li>
+                <li><i class="fas fa-calendar me-2"></i>Disponible para proyectos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <table class="table table-striped table-hover table-bordered align-middle table-certificados" style="margin-top: 12px;">
           <caption>Certificados: institución, certificado y año</caption>
           <thead>
             <tr>
@@ -245,6 +361,67 @@
       window.print();
       setTimeout(() => { this.style.display = 'block'; }, 600);
     });
+
+    // Toggle experiencia laboral
+    document.getElementById('toggleExperiencia').addEventListener('click', function() {
+      const content = document.getElementById('experienciaContent');
+      const icon = document.getElementById('experienciaIcon');
+      const text = document.getElementById('experienciaText');
+      
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.className = 'fas fa-eye-slash';
+        text.textContent = 'Ocultar';
+      } else {
+        content.style.display = 'none';
+        icon.className = 'fas fa-eye';
+        text.textContent = 'Mostrar';
+      }
+    });
+
+    // Toggle información de contacto
+    document.getElementById('toggleContacto').addEventListener('click', function() {
+      const content = document.getElementById('contactoContent');
+      const icon = document.getElementById('contactoIcon');
+      const text = document.getElementById('contactoText');
+      
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.className = 'fas fa-address-card';
+        text.textContent = 'Ocultar Contacto';
+      } else {
+        content.style.display = 'none';
+        icon.className = 'fas fa-address-card';
+        text.textContent = 'Mostrar Contacto';
+      }
+    });
+
+    // Buscador de habilidades
+    document.getElementById('searchSkills').addEventListener('input', function() {
+      const searchTerm = this.value.toLowerCase();
+      const skills = document.querySelectorAll('#skillsList li');
+      
+      skills.forEach(skill => {
+        const skillText = skill.getAttribute('data-skill').toLowerCase();
+        if (skillText.includes(searchTerm)) {
+          skill.style.display = 'block';
+        } else {
+          skill.style.display = 'none';
+        }
+      });
+    });
+
+    // Limpiar búsqueda
+    document.getElementById('clearSearch').addEventListener('click', function() {
+      document.getElementById('searchSkills').value = '';
+      const skills = document.querySelectorAll('#skillsList li');
+      skills.forEach(skill => {
+        skill.style.display = 'block';
+      });
+    });
   </script>
+
+    <!-- Bootstrap Bundle JS (para toasts y componentes interactivos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qQ2i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 </body>
 </html>
