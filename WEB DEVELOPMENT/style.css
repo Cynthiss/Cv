@@ -1,3 +1,84 @@
+/* Espaciado entre icono y texto en la info de contacto */
+.card-body ul.list-unstyled li i,
+.card-body ul.list-unstyled li .fa {
+  margin-right: 0.7em;
+  vertical-align: middle;
+}
+/* Botón moderno experiencia */
+.btn-modern-exp {
+  background: linear-gradient(90deg, #4f8cff 0%, #38c6ff 100%);
+  color: #fff !important;
+  border: none !important;
+  border-radius: 1.5em !important;
+  box-shadow: 0 2px 8px rgba(79,140,255,0.10);
+  font-weight: 600;
+  padding: 0.45em 1.3em;
+  font-size: 1.02em;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.btn-modern-exp:hover, .btn-modern-exp:focus {
+  background: linear-gradient(90deg, #38c6ff 0%, #4f8cff 100%);
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(56,198,255,0.13);
+  text-decoration: none;
+}
+.experiencia-icon {
+  color: #0d6efd;
+  font-size: 1.25em;
+  transition: transform 0.3s, color 0.3s;
+  margin-right: 0.3em;
+}
+.experiencia-icon.open {
+  color: #198754;
+  transform: rotate(-15deg) scale(1.15);
+  text-shadow: 0 2px 8px rgba(25,135,84,0.12);
+}
+.experiencia-icon.closed {
+  color: #0d6efd;
+  transform: rotate(0deg) scale(1);
+  text-shadow: 0 1px 4px rgba(13,110,253,0.10);
+}
+
+/* Botón moderno contacto */
+.btn-modern-contacto {
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff !important;
+  border: none !important;
+  border-radius: 1.5em !important;
+  box-shadow: 0 2px 8px rgba(67,233,123,0.10);
+  font-weight: 600;
+  padding: 0.45em 1.3em;
+  font-size: 1.02em;
+  transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.btn-modern-contacto:hover, .btn-modern-contacto:focus {
+  background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(56,249,215,0.13);
+  text-decoration: none;
+}
+.contacto-icon {
+  color: #198754;
+  font-size: 1.18em;
+  transition: transform 0.3s, color 0.3s;
+  margin-right: 0.3em;
+}
+.contacto-icon.open {
+  color: #0d6efd;
+  transform: rotate(8deg) scale(1.13);
+  text-shadow: 0 2px 8px rgba(13,110,253,0.10);
+}
+.contacto-icon.closed {
+  color: #198754;
+  transform: rotate(0deg) scale(1);
+  text-shadow: 0 1px 4px rgba(25,135,84,0.10);
+}
 /* Estilos para escritorio 1366x768 */
 @media screen and (min-width: 1025px) and (max-width: 1366px) {
   body { padding: 2rem; }

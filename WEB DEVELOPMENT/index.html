@@ -2,6 +2,44 @@
 <html lang="es">
 <head>
   <style>
+    .contacto-icon {
+      color: #198754;
+      font-size: 1.18em;
+      transition: transform 0.3s, color 0.3s;
+      margin-right: 0.3em;
+    }
+    .contacto-icon.open {
+      color: #0d6efd;
+      transform: rotate(8deg) scale(1.13);
+      text-shadow: 0 2px 8px rgba(13,110,253,0.10);
+    }
+    .contacto-icon.closed {
+      color: #198754;
+      transform: rotate(0deg) scale(1);
+      text-shadow: 0 1px 4px rgba(25,135,84,0.10);
+    }
+    .btn-modern-contacto {
+      background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+      color: #fff !important;
+      border: none !important;
+      border-radius: 1.5em !important;
+      box-shadow: 0 2px 8px rgba(67,233,123,0.10);
+      font-weight: 600;
+      padding: 0.45em 1.3em;
+      font-size: 1.02em;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .btn-modern-contacto:hover, .btn-modern-contacto:focus {
+      background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+      color: #fff !important;
+      box-shadow: 0 4px 16px rgba(56,249,215,0.13);
+      text-decoration: none;
+    }
+  </style>
+  <style>
     .btn-modern-exp {
       background: linear-gradient(90deg, #4f8cff 0%, #38c6ff 100%);
       color: #fff !important;
@@ -145,7 +183,7 @@
           color: '#232946',
           shadow: '0 8px 32px rgba(255, 207, 239, 0.18)'
         };
-        if (hour >= 12 && hour < 20) return {
+        if (hour >= 12 && hour < 19) return {
           text: '¡Buenas tardes!',
           icon: '<i class="fas fa-sun"></i>',
           gradient: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
@@ -366,7 +404,14 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h3 class="mb-0">Información Adicional</h3>
           <button id="toggleContacto" class="btn btn-outline-success btn-sm">
-            <i class="fas fa-address-card" id="contactoIcon"></i> <span id="contactoText">Mostrar Contacto</span>
+            <i class="fas fa-address-card contacto-icon closed" id="contactoIcon"></i> <span id="contactoText">Mostrar Contacto</span>
+          </button>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              document.getElementById('toggleContacto').classList.remove('btn-outline-success','btn-sm');
+              document.getElementById('toggleContacto').classList.add('btn-modern-contacto');
+            });
+          </script>
           </button>
         </div>
         <p>Datos complementarios sobre mi perfil profesional.</p>
@@ -375,9 +420,9 @@
         <div id="contactoContent" style="display: none;" class="mb-4">
           <div class="card bg-light">
             <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-envelope me-2"></i>Información de Contacto</h5>
+              <h3 class="card-title"><i class="fas fa-envelope me-2"></i> Información de Contacto</h3>
               <ul class="list-unstyled">
-                <li><i class="fas fa-phone me-2"></i>+502 1234-5678</li>
+                <li><i class="fas fa-phone me-2"></i>+502 4213-4974</li>
                 <li><i class="fas fa-envelope me-2"></i>cynthiasantos@ufm.edu</li>
                 <li><i class="fas fa-map-marker-alt me-2"></i>Guatemala City, Guatemala</li>
                 <li><i class="fas fa-calendar me-2"></i>Disponible para proyectos</li>
@@ -458,11 +503,11 @@
       
       if (content.style.display === 'none') {
         content.style.display = 'block';
-        icon.className = 'fas fa-address-card';
+        icon.className = 'fas fa-address-card contacto-icon open';
         text.textContent = 'Ocultar Contacto';
       } else {
         content.style.display = 'none';
-        icon.className = 'fas fa-address-card';
+        icon.className = 'fas fa-address-card contacto-icon closed';
         text.textContent = 'Mostrar Contacto';
       }
     });
