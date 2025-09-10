@@ -2,6 +2,46 @@
 <html lang="es">
 <head>
   <style>
+    .btn-modern-exp {
+      background: linear-gradient(90deg, #4f8cff 0%, #38c6ff 100%);
+      color: #fff !important;
+      border: none !important;
+      border-radius: 1.5em !important;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.10);
+      font-weight: 600;
+      padding: 0.45em 1.3em;
+      font-size: 1.02em;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .btn-modern-exp:hover, .btn-modern-exp:focus {
+      background: linear-gradient(90deg, #38c6ff 0%, #4f8cff 100%);
+      color: #fff !important;
+      box-shadow: 0 4px 16px rgba(56,198,255,0.13);
+      text-decoration: none;
+    }
+  </style>
+  <style>
+    .experiencia-icon {
+      color: #0d6efd;
+      font-size: 1.25em;
+      transition: transform 0.3s, color 0.3s;
+      margin-right: 0.3em;
+    }
+    .experiencia-icon.open {
+      color: #198754;
+      transform: rotate(-15deg) scale(1.15);
+      text-shadow: 0 2px 8px rgba(25,135,84,0.12);
+    }
+    .experiencia-icon.closed {
+      color: #0d6efd;
+      transform: rotate(0deg) scale(1);
+      text-shadow: 0 1px 4px rgba(13,110,253,0.10);
+    }
+  </style>
+  <style>
     @keyframes bounceIn {
       0% { transform: scale(0.7); opacity: 0; }
       60% { transform: scale(1.15); opacity: 1; }
@@ -285,7 +325,15 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h2 class="mb-0">Experiencia Laboral</h2>
           <button id="toggleExperiencia" class="btn btn-outline-primary btn-sm">
-            <i class="fas fa-eye" id="experienciaIcon"></i> <span id="experienciaText">Mostrar</span>
+            <i class="fas fa-eye experiencia-icon closed" id="experienciaIcon"></i> <span id="experienciaText">Mostrar</span>
+          </button>
+          <script>
+            // Cambiar clase del botón al cargar
+            document.addEventListener('DOMContentLoaded', function() {
+              document.getElementById('toggleExperiencia').classList.remove('btn-outline-primary','btn-sm');
+              document.getElementById('toggleExperiencia').classList.add('btn-modern-exp');
+            });
+          </script>
           </button>
         </div>
         <article id="experienciaContent" style="display: none;">
@@ -391,14 +439,13 @@
       const content = document.getElementById('experienciaContent');
       const icon = document.getElementById('experienciaIcon');
       const text = document.getElementById('experienciaText');
-      
       if (content.style.display === 'none') {
         content.style.display = 'block';
-        icon.className = 'fas fa-eye-slash';
+        icon.className = 'fas fa-eye-slash experiencia-icon open';
         text.textContent = 'Ocultar';
       } else {
         content.style.display = 'none';
-        icon.className = 'fas fa-eye';
+        icon.className = 'fas fa-eye experiencia-icon closed';
         text.textContent = 'Mostrar';
       }
     });
