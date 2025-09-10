@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <style>
+    @keyframes bounceIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      60% { transform: scale(1.15); opacity: 1; }
+      80% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+    .greeting-animated {
+      animation: bounceIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+    }
+    .greeting-toast-cube {
+      border-radius: 0.7rem !important;
+      box-shadow: 0 2px 8px rgba(30,40,60,0.10) !important;
+      border: 1px solid rgba(255,255,255,0.18) !important;
+      padding: 0.35rem 0.7rem !important;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      backdrop-filter: blur(4px);
+      transition: background 0.5s, color 0.5s;
+      min-width: 110px;
+      max-width: 160px;
+    }
+    .greeting-toast-cube .btn-close {
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+    }
+    .greeting-toast-cube .greeting-message {
+      text-shadow: 0 1px 2px rgba(0,0,0,0.10);
+      font-size: 1.18rem;
+      font-weight: 600;
+    }
+  </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mi CV</title>
@@ -26,25 +60,15 @@
       <i class="fas fa-moon"></i>
     </button>
 
-    <!-- Toast de saludo dinámico flotante mejorado -->
-    <div class="position-fixed" style="top: 20px; right: 20px; z-index: 9999;">
-      <div id="greetingToast" class="toast border-0 shadow-lg" role="alert" aria-live="assertive" aria-atomic="true" 
-           style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                  color: white; 
-                  min-width: 220px; 
-                  max-width: 300px; 
-                  border-radius: 20px; 
-                  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-                  backdrop-filter: blur(10px);
-                  border: 1px solid rgba(255,255,255,0.2);">
-        <div class="toast-body d-flex align-items-center justify-content-between" 
-             style="font-size: 1.1rem; gap: 1rem; padding: 1rem 1.5rem;">
-          <div class="d-flex align-items-center" style="gap: 0.8rem;">
-            <span id="greetingIcon" class="fs-3" style="display: flex; align-items: center; opacity: 0.9;"></span>
-            <span id="greetingMessage" style="font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.3);"></span>
+    <!-- Toast de saludo dinámico flotante en esquina superior derecha -->
+    <div id="greetingToastWrapper" style="position: fixed; top: 24px; right: 24px; z-index: 9999; width: auto; max-width: 90vw; pointer-events: none;">
+      <div id="greetingToast" class="toast greeting-toast-cube fade" role="alert" aria-live="assertive" aria-atomic="true" style="pointer-events: auto; margin-left: auto;">
+        <div class="toast-body d-flex align-items-center justify-content-between" style="gap: 0.4rem;">
+          <div class="d-flex align-items-center" style="gap: 0.35rem;">
+            <span id="greetingIcon" class="fs-6 greeting-animated" style="display: flex; align-items: center;"></span>
+            <span id="greetingMessage" class="greeting-message"></span>
           </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close" 
-                  style="opacity: 0.8; font-size: 0.8rem;"></button>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close" style="opacity: 0.85; font-size: 0.7rem;"></button>
         </div>
       </div>
     </div>
@@ -74,57 +98,57 @@
       // Saludo dinámico con toast Bootstrap mejorado
       function getGreetingAndIcon() {
         const hour = new Date().getHours();
-        if (hour >= 6 && hour < 12) return { 
-          text: '¡Buenos días!', 
+        if (hour >= 6 && hour < 12) return {
+          text: '¡Buenos días!',
           icon: '<i class="fas fa-coffee"></i>',
-          gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+          gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+          color: '#232946',
+          shadow: '0 8px 32px rgba(255, 207, 239, 0.18)'
         };
-        if (hour >= 12 && hour < 20) return { 
-          text: '¡Buenas tardes!', 
+        if (hour >= 12 && hour < 20) return {
+          text: '¡Buenas tardes!',
           icon: '<i class="fas fa-sun"></i>',
-          gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+          gradient: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+          color: '#232946',
+          shadow: '0 8px 32px rgba(246, 211, 101, 0.18)'
         };
-        return { 
-          text: '¡Buenas noches!', 
+        return {
+          text: '¡Buenas noches!',
           icon: '<i class="fas fa-moon"></i>',
-          gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+          gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          color: '#fff',
+          shadow: '0 8px 32px rgba(102, 126, 234, 0.18)'
         };
       }
-      
+
       document.addEventListener('DOMContentLoaded', function() {
         const greeting = getGreetingAndIcon();
         const greetingMessage = document.getElementById('greetingMessage');
         const greetingIcon = document.getElementById('greetingIcon');
         const toastEl = document.getElementById('greetingToast');
-        
-        // Actualizar contenido
+
+        // Actualizar contenido y estilos visuales
         greetingMessage.textContent = greeting.text;
         greetingIcon.innerHTML = greeting.icon;
-        
-        // Aplicar gradiente dinámico
+        greetingIcon.style.color = greeting.color;
         toastEl.style.background = greeting.gradient;
-        
-        // Asegura que el toast esté oculto por defecto
+        toastEl.style.color = greeting.color;
+        toastEl.style.boxShadow = greeting.shadow;
+        toastEl.style.border = '2.5px solid rgba(255,255,255,0.35)';
+
+        // Animación del icono
+        greetingIcon.classList.add('greeting-animated');
+
+        // Mostrar el toast con animación Bootstrap
         toastEl.classList.remove('show');
-        
-        // Mostrar el toast con animación suave
-        setTimeout(() => {
-          toastEl.style.transform = 'translateX(100%)';
-          toastEl.style.transition = 'transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
-          
+        if (window.bootstrap && window.bootstrap.Toast) {
           setTimeout(() => {
-            toastEl.classList.add('show');
-            toastEl.style.transform = 'translateX(0)';
-          }, 100);
-          
-          // Auto-hide después de 4 segundos
-          setTimeout(() => {
-            toastEl.style.transform = 'translateX(100%)';
-            setTimeout(() => {
-              toastEl.classList.remove('show');
-            }, 500);
-          }, 4000);
-        }, 800); // Retardo inicial para mejor UX
+            const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+            toast.show();
+          }, 300);
+        } else {
+          toastEl.classList.add('show');
+        }
       });
     </script>
 
