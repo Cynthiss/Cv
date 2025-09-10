@@ -278,10 +278,43 @@
         </div>
       </section>
 
-      <section id="soft-skills" class="card border-danger">
+
+
+
+      <div class="bloques-row">
+        <section id="lenguajes" class="card border-warning">
+          <h2>Lenguajes de Programación</h2>
+          <article>
+            <ol>
+              <li>Python</li>
+              <li>C#</li>
+              <li>C++</li>
+              <li>SQL</li>
+            </ol>
+          </article>
+        </section>
+
+        <section id="tecnologias" class="card border-purple">
+          <h2>Tecnologías y Herramientas</h2>
+          <article>
+            <ol>
+              <li>Docker</li>
+              <li>Postman</li>
+              <li>Firebase</li>
+              <li>React.js</li>
+              <li>Node.js</li>
+              <li>GitHub</li>
+              <li>MongoDB</li>
+              <li>AWS</li>
+            </ol>
+          </article>
+        </section>
+      </div>
+
+      <section id="soft-skills" class="card border-danger mt-4">
         <h2>Soft Skills</h2>
-        <div class="mb-3">
-          <div class="input-group">
+        <div class="mb-3" style="width:100%;">
+          <div class="input-group" style="width:100%;">
             <span class="input-group-text"><i class="fas fa-search"></i></span>
             <input type="text" id="searchSkills" class="form-control" placeholder="Buscar habilidades...">
             <button class="btn btn-outline-secondary" type="button" id="clearSearch">
@@ -289,46 +322,16 @@
             </button>
           </div>
         </div>
-        <article>
-          <ol id="skillsList">
-            <li data-skill="comunicación efectiva">Comunicación efectiva</li>
-            <li data-skill="trabajo en equipo">Trabajo en equipo</li>
-            <li data-skill="resolución de problemas">Resolución de problemas</li>
-            <li data-skill="gestión del tiempo">Gestión del tiempo</li>
-            <li data-skill="adaptabilidad">Adaptabilidad</li>
-            <li data-skill="creatividad">Creatividad</li>
-            <li data-skill="liderazgo">Liderazgo</li>
-            <li data-skill="pensamiento crítico">Pensamiento crítico</li>
-          </ol>
-        </article>
-      </section>
-
-      <section id="lenguajes" class="card border-warning">
-        <h2>Lenguajes de Programación</h2>
-        <article>
-          <ol>
-            <li>Python</li>
-            <li>C#</li>
-            <li>C++</li>
-            <li>SQL</li>
-          </ol>
-        </article>
-      </section>
-
-      <section id="tecnologias" class="card border-purple">
-        <h2>Tecnologías y Herramientas</h2>
-        <article>
-          <ol>
-            <li>Docker</li>
-            <li>Postman</li>
-            <li>Firebase</li>
-            <li>React.js</li>
-            <li>Node.js</li>
-            <li>GitHub</li>
-            <li>MongoDB</li>
-            <li>AWS</li>
-          </ol>
-        </article>
+        <ol id="skillsList">
+          <li data-skill="comunicación efectiva">Comunicación efectiva</li>
+          <li data-skill="trabajo en equipo">Trabajo en equipo</li>
+          <li data-skill="resolución de problemas">Resolución de problemas</li>
+          <li data-skill="gestión del tiempo">Gestión del tiempo</li>
+          <li data-skill="adaptabilidad">Adaptabilidad</li>
+          <li data-skill="creatividad">Creatividad</li>
+          <li data-skill="liderazgo">Liderazgo</li>
+          <li data-skill="pensamiento crítico">Pensamiento crítico</li>
+        </ol>
       </section>
 
       <section id="educacion" class="card border-green">
@@ -512,28 +515,30 @@
       }
     });
 
-    // Buscador de habilidades
-    document.getElementById('searchSkills').addEventListener('input', function() {
-      const searchTerm = this.value.toLowerCase();
-      const skills = document.querySelectorAll('#skillsList li');
-      
-      skills.forEach(skill => {
-        const skillText = skill.getAttribute('data-skill').toLowerCase();
-        if (skillText.includes(searchTerm)) {
-          skill.style.display = 'block';
-        } else {
-          skill.style.display = 'none';
-        }
-      });
-    });
+    // Buscador de habilidades robusto y funcional
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('searchSkills');
+      const clearBtn = document.getElementById('clearSearch');
+      const skillsList = document.getElementById('skillsList');
+      // Solo selecciona los LI reales (no nodos de texto)
+      const allSkills = Array.from(skillsList.querySelectorAll('li'));
 
-    // Limpiar búsqueda
-    document.getElementById('clearSearch').addEventListener('click', function() {
-      document.getElementById('searchSkills').value = '';
-      const skills = document.querySelectorAll('#skillsList li');
-      skills.forEach(skill => {
-        skill.style.display = 'block';
+      function filterSkills() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        allSkills.forEach((li) => {
+          // Usa data-skill si existe, si no, el texto visible
+          const skillText = (li.getAttribute('data-skill') || li.textContent).toLowerCase();
+          li.style.display = skillText.includes(searchTerm) ? '' : 'none';
+        });
+      }
+
+      searchInput.addEventListener('input', filterSkills);
+      clearBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        filterSkills();
+        searchInput.focus();
       });
+      filterSkills();
     });
   </script>
 
