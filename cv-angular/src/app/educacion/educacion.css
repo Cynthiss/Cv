@@ -1,4 +1,4 @@
-/* Copia los estilos de tu CSS que aplican solo a la tabla de educación */
+/* Tabla de educación */
 .table-educacion{
   --table-main-bg: linear-gradient(135deg, #e0e7ff 80%, #dbeafe 100%);
   --table-head-bg: linear-gradient(90deg, #1e40af 70%, #3b82f6 100%);
