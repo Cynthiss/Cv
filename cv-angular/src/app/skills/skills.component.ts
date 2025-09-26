@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
+  standalone: true,
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
-  softSkills = [
+  softSkills: string[] = [
     'Comunicación efectiva',
     'Trabajo en equipo',
     'Resolución de problemas',
@@ -17,14 +18,14 @@ export class SkillsComponent {
     'Pensamiento crítico'
   ];
 
-  lenguajesProgramacion = [
+  lenguajesProgramacion: string[] = [
     'Python',
     'C#',
     'C++',
     'SQL'
   ];
 
-  tecnologiasHerramientas = [
+  tecnologiasHerramientas: string[] = [
     'Docker',
     'Postman',
     'Firebase',

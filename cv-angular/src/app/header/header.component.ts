@@ -2,24 +2,26 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
+  standalone: true,
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
   greeting = { text: '', icon: '' };
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.greeting = this.getGreetingAndIcon();
   }
 
-  getGreetingAndIcon() {
+  getGreetingAndIcon(): { text: string; icon: string } {
     const hour = new Date().getHours();
+
     if (hour >= 6 && hour < 12) {
-      return { text: '¡Buenos días!', icon: '☀️' };  // Ícono de sol como texto
+      return { text: '¡Buenos días!', icon: '☀️' };
     }
     if (hour >= 12 && hour < 19) {
-      return { text: '¡Buenas tardes!', icon: '🌞' };  // Ícono de sol como texto
+      return { text: '¡Buenas tardes!', icon: '🌞' };
     }
-    return { text: '¡Buenas noches!', icon: '🌙' };  // Ícono de luna como texto
+    return { text: '¡Buenas noches!', icon: '🌙' };
   }
 }

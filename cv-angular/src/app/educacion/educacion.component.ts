@@ -8,6 +8,7 @@ interface Educacion {
 
 @Component({
   selector: 'app-educacion',
+  standalone: true,
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })

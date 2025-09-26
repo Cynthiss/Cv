@@ -1,0 +1,22 @@
+<section id="experiencia" class="card border-teal">
+  <h2>Experiencia Laboral</h2>
+  <article>
+    <table class="table table-striped table-hover table-bordered align-middle table-experiencia">
+      <caption>Experiencia laboral: periodo, empresa y puesto</caption>
+      <thead>
+        <tr>
+          <th scope="col">Periodo</th>
+          <th scope="col">Empresa</th>
+          <th scope="col">Puesto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let exp of experiencias">
+          <td>{{ exp.periodo }}</td>
+          <td>{{ exp.empresa }}</td>
+          <td>{{ exp.puesto }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+</section>
