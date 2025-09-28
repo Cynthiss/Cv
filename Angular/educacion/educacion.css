@@ -1,0 +1,10 @@
+/* Tabla de educación */
+.table-educacion{
+  --table-main-bg: linear-gradient(135deg, #e0e7ff 80%, #dbeafe 100%);
+  --table-head-bg: linear-gradient(90deg, #1e40af 70%, #3b82f6 100%);
+  --table-row-hover:#e0e7ff; --table-caption:#1e293b; --table-border:#3b82f6;
+}
+.table-educacion th, .table-educacion td{
+  padding:1rem 1.2rem;
+  font-size:1.05rem;
+}
