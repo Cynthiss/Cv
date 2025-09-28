@@ -1,26 +1,54 @@
 .skills-card {
-  background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-  border-radius: 1.25rem;
-  box-shadow: 0 2px 8px rgba(30,40,60,0.10);
-  padding: 2rem 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
   margin: 2rem auto;
-  max-width: 600px;
+  max-width: 800px;
 }
+
 .skills-card h2 {
-  font-size: 1.2rem;
-  color: #232946;
-  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #1e3a8a;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #a5b4fc;
+  padding-bottom: 0.3rem;
 }
-.skills-card ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.2rem;
+
+.skills-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
-.skills-card li {
-  background: #f1f5f9;
-  border-radius: 1em;
-  margin-bottom: 0.5em;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  box-shadow: 0 1px 4px rgba(67, 89, 233, 0.04);
-} 
+
+/* Pills generales */
+.pill {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #fff;
+  cursor: default;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Hover */
+.pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Colores por tipo */
+.pill.soft {
+  background: linear-gradient(135deg, #facc15, #f59e0b);
+}
+
+.pill.lang {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+
+.pill.tech {
+  background: linear-gradient(135deg, #10b981, #14b8a6);
+}

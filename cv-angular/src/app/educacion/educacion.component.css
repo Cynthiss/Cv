@@ -1,10 +1,30 @@
-/* Tabla de educación */
-.table-educacion{
-  --table-main-bg: linear-gradient(135deg, #e0e7ff 80%, #dbeafe 100%);
-  --table-head-bg: linear-gradient(90deg, #1e40af 70%, #3b82f6 100%);
-  --table-row-hover:#e0e7ff; --table-caption:#1e293b; --table-border:#3b82f6;
+.table-educacion {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
 }
-.table-educacion th, .table-educacion td{
-  padding:1rem 1.2rem;
-  font-size:1.05rem;
+
+.table-educacion th {
+  background-color: #6e8efb;
+  color: #fff;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.table-educacion td {
+  padding: 0.75rem;
+}
+
+.table-educacion tr:nth-child(even) {
+  background-color: #f3f4f6;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
 }
