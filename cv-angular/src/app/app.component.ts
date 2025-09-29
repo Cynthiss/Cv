@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { SkillsComponent } from './skills/skills.component';
@@ -9,6 +10,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterModule,        // solo RouterModule
     HeaderComponent,
     PerfilComponent,
     SkillsComponent,
