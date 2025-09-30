@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router'; // Import necesario para router-outlet
 
 interface Experiencia {
   periodo: string;
@@ -9,6 +10,7 @@ interface Experiencia {
 @Component({
   selector: 'app-experiencia',
   standalone: true,
+  imports: [RouterModule], // Permite usar <router-outlet>
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.css']
 })

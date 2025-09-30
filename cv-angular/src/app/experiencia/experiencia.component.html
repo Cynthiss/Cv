@@ -1,5 +1,7 @@
 <section id="experiencia" class="card border-teal">
   <h2>Experiencia Laboral</h2>
+
+  <!-- Tabla de experiencia -->
   <article>
     <table class="table table-striped table-hover table-bordered align-middle table-experiencia">
       <caption>Experiencia laboral: periodo, empresa y puesto</caption>
@@ -24,4 +26,13 @@
       </tbody>
     </table>
   </article>
+
+  <!-- Menú de rutas hijas -->
+  <nav>
+    <a routerLink="trabajo" routerLinkActive="active">Trabajos</a> |
+    <a routerLink="estudios" routerLinkActive="active">Estudios</a>
+  </nav>
+
+  <!-- Renderizarán los hijos -->
+  <router-outlet></router-outlet>
 </section>
