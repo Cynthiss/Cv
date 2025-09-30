@@ -1,38 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
+  imports: [NgFor],
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent {
-  softSkills: string[] = [
-    'Comunicación efectiva',
-    'Trabajo en equipo',
-    'Resolución de problemas',
-    'Gestión del tiempo',
-    'Adaptabilidad',
-    'Creatividad',
-    'Liderazgo',
-    'Pensamiento crítico'
-  ];
+export class SkillsComponent implements OnInit {
+  softSkills: string[] = [];
+  lenguajesProgramacion: string[] = [];
+  tecnologiasHerramientas: string[] = [];
 
-  lenguajesProgramacion: string[] = [
-    'Python',
-    'C#',
-    'C++',
-    'SQL'
-  ];
+  constructor(private dataService: DataService) {}
 
-  tecnologiasHerramientas: string[] = [
-    'Docker',
-    'Postman',
-    'Firebase',
-    'React.js',
-    'Node.js',
-    'GitHub',
-    'Mongo DB',
-    'AWS'
-  ];
+  ngOnInit(): void {
+    this.softSkills = this.dataService.softSkills;
+    this.lenguajesProgramacion = this.dataService.lenguajesProgramacion;
+    this.tecnologiasHerramientas = this.dataService.tecnologiasHerramientas;
+  }
 }

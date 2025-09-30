@@ -1,30 +1,64 @@
+.card {
+  background: #f0f9ff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+h2 {
+  text-align: center;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
 .table-experiencia {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.table-experiencia th,
+.table-experiencia td {
+  border: 1px solid #cbd5e1;
+  padding: 0.8rem;
+  text-align: center;
 }
 
 .table-experiencia th {
-  background-color: #6ee7b7;
-  color: #000;
-  padding: 0.75rem;
-  text-align: left;
-}
-
-.table-experiencia td {
-  padding: 0.75rem;
+  background-color: #0ea5e9;
+  color: white;
 }
 
 .table-experiencia tr:nth-child(even) {
-  background-color: #f3f4f6;
+  background-color: #e0f2fe;
 }
 
-.card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
+.experience-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.experience-nav a {
+  text-decoration: none;
+  color: #0ea5e9;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.experience-nav a.active,
+.experience-nav a:hover {
+  background-color: #0ea5e9;
+  color: #ffffff;
+}
+
+.child-content {
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.05);
 }

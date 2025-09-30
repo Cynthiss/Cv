@@ -1,31 +1,16 @@
 <section class="skills-card">
   <h2>Soft Skills</h2>
   <ul>
-    <li>Comunicación efectiva</li>
-    <li>Trabajo en equipo</li>
-    <li>Resolución de problemas</li>
-    <li>Gestión del tiempo</li>
-    <li>Adaptabilidad</li>
-    <li>Creatividad</li>
-    <li>Liderazgo</li>
-    <li>Pensamiento crítico</li>
+    <li *ngFor="let skill of softSkills">{{ skill }}</li>
   </ul>
+
   <h2>Lenguajes de Programación</h2>
   <ul>
-    <li>Python</li>
-    <li>C#</li>
-    <li>C++</li>
-    <li>SQL</li>
+    <li *ngFor="let lang of lenguajesProgramacion">{{ lang }}</li>
   </ul>
+
   <h2>Tecnologías y Herramientas</h2>
   <ul>
-    <li>Docker</li>
-    <li>Postman</li>
-    <li>Firebase</li>
-    <li>React.js</li>
-    <li>Node.js</li>
-    <li>GitHub</li>
-    <li>Mongo DB</li>
-    <li>AWS</li>
+    <li *ngFor="let tech of tecnologiasHerramientas">{{ tech }}</li>
   </ul>
 </section>
