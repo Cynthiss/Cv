@@ -10,7 +10,7 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterModule,        // solo RouterModule
+    RouterModule,
     HeaderComponent,
     PerfilComponent,
     SkillsComponent,
@@ -20,4 +20,4 @@ import { ExperienciaComponent } from './experiencia/experiencia.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent { }
+export class AppComponent {}

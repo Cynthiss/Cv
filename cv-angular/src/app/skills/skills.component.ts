@@ -1,24 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
-import { DataService } from '../services/data.service';
+import { Component } from '@angular/core';
+import { DataService } from '../data.service';
+import { ReversePipe } from '../reverse-pipe'; // <-- importante
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [NgFor],
+  imports: [ReversePipe], // <-- aquí
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css']
 })
-export class SkillsComponent implements OnInit {
-  softSkills: string[] = [];
-  lenguajesProgramacion: string[] = [];
-  tecnologiasHerramientas: string[] = [];
+export class SkillsComponent {
+  softSkills = this.dataService.softSkills;
+  lenguajesProgramacion = this.dataService.lenguajesProgramacion;
+  tecnologiasHerramientas = this.dataService.tecnologiasHerramientas;
 
   constructor(private dataService: DataService) {}
-
-  ngOnInit(): void {
-    this.softSkills = this.dataService.softSkills;
-    this.lenguajesProgramacion = this.dataService.lenguajesProgramacion;
-    this.tecnologiasHerramientas = this.dataService.tecnologiasHerramientas;
-  }
 }

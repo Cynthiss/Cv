@@ -1,16 +1,22 @@
 <section class="skills-card">
   <h2>Soft Skills</h2>
   <ul>
-    <li *ngFor="let skill of softSkills">{{ skill }}</li>
+    <li *ngFor="let skill of softSkills">
+      {{ skill | reverse }}  <!-- solo el reverse -->
+    </li>
   </ul>
 
   <h2>Lenguajes de Programación</h2>
   <ul>
-    <li *ngFor="let lang of lenguajesProgramacion">{{ lang }}</li>
+    <li *ngFor="let lang of lenguajesProgramacion">
+      {{ lang | reverse }}
+    </li>
   </ul>
 
   <h2>Tecnologías y Herramientas</h2>
   <ul>
-    <li *ngFor="let tech of tecnologiasHerramientas">{{ tech }}</li>
+    <li *ngFor="let tech of tecnologiasHerramientas">
+      {{ tech | reverse }}
+    </li>
   </ul>
 </section>
