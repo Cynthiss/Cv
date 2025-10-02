@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router'; 
 
 interface Experiencia {
   periodo: string;
@@ -9,6 +10,7 @@ interface Experiencia {
 @Component({
   selector: 'app-experiencia',
   standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.css']
 })

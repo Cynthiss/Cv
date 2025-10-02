@@ -2,21 +2,21 @@
   <h2>Soft Skills</h2>
   <ul>
     <li *ngFor="let skill of softSkills">
-      {{ skill | reverse }}  <!-- solo el reverse -->
+      {{ skill | star }}
     </li>
   </ul>
 
   <h2>Lenguajes de Programación</h2>
   <ul>
     <li *ngFor="let lang of lenguajesProgramacion">
-      {{ lang | reverse }}
+      {{ lang | star }}
     </li>
   </ul>
 
   <h2>Tecnologías y Herramientas</h2>
   <ul>
     <li *ngFor="let tech of tecnologiasHerramientas">
-      {{ tech | reverse }}
+      {{ tech | star }}
     </li>
   </ul>
 </section>

@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'reverse',
+  name: 'star',
   standalone: true
 })
-export class ReversePipe implements PipeTransform {
+export class StarPipe implements PipeTransform {
   transform(value: string): string {
     if (!value) return '';
-    return value.split('').reverse().join('');
+    return `★ ${value} ★`;
   }
 }
