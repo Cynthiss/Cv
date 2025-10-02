@@ -8,13 +8,12 @@ import { StudiesComponent } from './experience/studies/studies.component';
 export const routes: Routes = [
   { path: 'about', component: PerfilComponent },
   { path: 'skills', component: SkillsComponent },
-  { 
-    path: 'experience', 
-    component: ExperienciaComponent,
+  {
+    path: 'experience',
     children: [
-      { path: 'trabajo', component: JobsComponent },
-      { path: 'estudios', component: StudiesComponent },
-      { path: '', redirectTo: 'trabajo', pathMatch: 'full' }
+      { path: '', component: ExperienciaComponent },  
+      { path: 'trabajo', component: JobsComponent },  
+      { path: 'estudios', component: StudiesComponent } 
     ]
   },
   { path: '', redirectTo: '/about', pathMatch: 'full' },

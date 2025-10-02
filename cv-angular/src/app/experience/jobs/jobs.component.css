@@ -1,0 +1,75 @@
+/* Contenedor general */
+.exp-container {
+  margin: 20px auto;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.exp-container:hover {
+  transform: scale(1.01);
+}
+
+/* Encabezados */
+.exp-container h2 {
+  color: #4f46e5;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.exp-container p {
+  text-align: center;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Tabla */
+.exp-table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Encabezados de la tabla */
+.exp-table th {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+/* Filas */
+.exp-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+/* Efecto hover */
+.exp-table tr:hover td {
+  background: #eef2ff;
+  cursor: pointer;
+}
+
+/* Animación de filas */
+.exp-table tr {
+  animation: fadeInUp 0.5s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

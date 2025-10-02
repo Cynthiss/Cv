@@ -1,22 +1,44 @@
 <section class="skills-card">
-  <h2>Soft Skills</h2>
-  <ul>
-    <li *ngFor="let skill of softSkills">
-      {{ skill | star }}
-    </li>
-  </ul>
+  <h2>Mis Skills</h2>
 
-  <h2>Lenguajes de Programación</h2>
-  <ul>
-    <li *ngFor="let lang of lenguajesProgramacion">
-      {{ lang | star }}
-    </li>
-  </ul>
-
-  <h2>Tecnologías y Herramientas</h2>
-  <ul>
-    <li *ngFor="let tech of tecnologiasHerramientas">
-      {{ tech | star }}
-    </li>
-  </ul>
+  <table class="skills-table">
+    <thead>
+      <tr>
+        <th>Categoría</th>
+        <th>Habilidades</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Soft Skills</td>
+        <td>
+          <div class="skills-container">
+            <span *ngFor="let skill of softSkills" class="skill-item">
+              {{ skill | star }}
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Lenguajes</td>
+        <td>
+          <div class="skills-container">
+            <span *ngFor="let lang of lenguajesProgramacion" class="skill-item">
+              {{ lang | star }}
+            </span>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>Tecnologías</td>
+        <td>
+          <div class="skills-container">
+            <span *ngFor="let tech of tecnologiasHerramientas" class="skill-item">
+              {{ tech | star }}
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </section>
