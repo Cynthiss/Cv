@@ -1,54 +1,60 @@
 .skills-card {
-  background: #f9fafb;
+  margin: 20px;
+  padding: 20px;
   border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  padding: 2rem;
-  margin: 2rem auto;
-  max-width: 800px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
 }
 
 .skills-card h2 {
-  margin-bottom: 0.75rem;
-  color: #1e3a8a;
-  font-size: 1.4rem;
-  border-bottom: 2px solid #a5b4fc;
-  padding-bottom: 0.3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.skills-group {
-  margin-bottom: 1.5rem;
+/* Tabla */
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.skills-table th {
+  background: #4f46e5;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.skills-table td {
+  padding: 16px;
+  border-bottom: 1px solid #ddd;
+  vertical-align: top;
+}
+
+/* Contenedor de las habilidades */
+.skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 10px;
 }
 
-/* Pills generales */
-.pill {
+/* Tarjetitas de skills */
+.skill-item {
   display: inline-block;
-  padding: 0.5rem 1.2rem;
-  border-radius: 50px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  color: #fff;
-  cursor: default;
-  transition: transform 0.2s, box-shadow 0.2s;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover */
-.pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* Colores por tipo */
-.pill.soft {
-  background: linear-gradient(135deg, #facc15, #f59e0b);
-}
-
-.pill.lang {
-  background: linear-gradient(135deg, #3b82f6, #6366f1);
-}
-
-.pill.tech {
-  background: linear-gradient(135deg, #10b981, #14b8a6);
+/* Animación al pasar el mouse */
+.skill-item:hover {
+  transform: scale(1.1) rotate(-2deg);
+  background: #c7d2fe;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }

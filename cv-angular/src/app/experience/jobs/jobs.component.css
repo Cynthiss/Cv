@@ -1,3 +1,4 @@
+/* Contenedor general */
 .exp-container {
   margin: 20px auto;
   max-width: 900px;
@@ -5,9 +6,14 @@
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-  font-family: Arial, sans-serif;
+  transition: transform 0.2s ease;
 }
 
+.exp-container:hover {
+  transform: scale(1.01);
+}
+
+/* Encabezados */
 .exp-container h2 {
   color: #4f46e5;
   text-align: center;
@@ -24,38 +30,39 @@
 .exp-table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 10px;
   overflow: hidden;
-  animation: fadeInUp 0.6s ease both;
+  border-radius: 10px;
 }
 
-.exp-table caption {
-  caption-side: top;
-  text-align: left;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #444;
-}
-
+/* Encabezados de la tabla */
 .exp-table th {
   background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: white;
   padding: 12px;
   text-align: left;
   font-size: 1rem;
+  letter-spacing: 0.5px;
 }
 
+/* Filas */
 .exp-table td {
   padding: 12px;
   border-bottom: 1px solid #eee;
+  color: #333;
   transition: background 0.3s ease;
 }
 
+/* Efecto hover */
 .exp-table tr:hover td {
   background: #eef2ff;
+  cursor: pointer;
 }
 
-/* Animación */
+/* Animación de filas */
+.exp-table tr {
+  animation: fadeInUp 0.5s ease both;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

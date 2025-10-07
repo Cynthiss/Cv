@@ -1,38 +1,103 @@
-.perfil-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 2rem;
-  text-align: center;
-  margin: 2rem auto;
-  max-width: 480px;
+/* Barra de botones */
+.nav-bar {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
-.avatar {
+.nav-bar button {
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.nav-bar button:hover {
+  transform: scale(1.1);
+  background: #3730a3;
+}
+
+/* Card */
+.perfil-card {
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.perfil-card img.avatar {
   width: 140px;
   height: 140px;
-  object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #6e8efb;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
+  border: 3px solid #4f46e5;
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #232946;
+.perfil-card h2 {
+  margin: 10px 0 5px;
+  font-size: 1.8rem;
+  color: #333;
 }
 
-h4 {
-  font-size: 1.1rem;
-  color: #6e8efb;
-  font-weight: 500;
-  margin-bottom: 1rem;
+.perfil-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #4f46e5;
 }
 
-p {
+.perfil-card p {
+  margin: 15px 0 25px;
   font-size: 1rem;
-  color: #475569;
-  margin-bottom: 1.5rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* 🔽 Iconos sociales */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+/* Botones circulares */
+.icon-btn {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-decoration: none;
+}
+
+/* Forzar color de los íconos */
+.icon-btn i {
+  color: white;
+}
+
+/* Colores de fondo personalizados */
+.icon-btn.email { background: #d93025; }   /* Gmail */
+.icon-btn.github { background: #171515; }  /* GitHub */
+.icon-btn.linkedin { background: #0a66c2; }/* LinkedIn */
+
+.icon-btn:hover {
+  transform: scale(1.2);
+  opacity: 0.9;
+}
+
+i {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
 }
