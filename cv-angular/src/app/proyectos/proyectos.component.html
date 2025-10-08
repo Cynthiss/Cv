@@ -1,0 +1,14 @@
+<section class="projects-card">
+  <h2>🧩 Mis Proyectos</h2>
+  <div class="projects-container">
+    <div *ngFor="let repo of repos" class="project">
+      <h3>{{ repo.name }}</h3>
+      <p>{{ repo.description || 'Sin descripción' }}</p>
+      <a [href]="repo.html_url" target="_blank">🔗 Ver en GitHub</a>
+      <p>⭐ {{ repo.stargazers_count }} estrellas</p>
+
+      
+      <pre>{{ repo | json }}</pre> <!-- Esto imprimirá todo el objeto repo -->
+    </div>
+  </div>
+</section>
