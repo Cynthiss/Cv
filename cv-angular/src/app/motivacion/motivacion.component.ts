@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./motivacion.component.css']
 })
 export class MotivacionComponent implements OnInit {
-  quote: string = '';  // Frase de la cita
+  quote: string = '';  // Contenido de la cita
   author: string = ''; // Autor de la cita
 
   constructor(private quotesService: QuotesService) {}
@@ -18,8 +18,8 @@ export class MotivacionComponent implements OnInit {
   ngOnInit(): void {
     this.quotesService.getQuote().subscribe(
       (data) => {
-        this.quote = data.content;  // Asignamos la cita
-        this.author = data.author;  // Asignamos el autor
+        this.quote = data.quoteText;  // Asignamos la cita
+        this.author = data.quoteAuthor;  // Asignamos el autor
       },
       (error) => {
         console.error('Error al obtener la frase:', error);
