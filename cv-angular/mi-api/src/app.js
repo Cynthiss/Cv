@@ -7,8 +7,8 @@ const app = express();
 app.use(cors()); // Habilitar CORS
 app.use(express.json()); // Para que el servidor entienda los datos en formato JSON
 
-// Rutas CRUD
-app.use('/skills', skillsRoutes); // Usar las rutas de skills
+// Usar las rutas de skills
+app.use('/skills', skillsRoutes);
 
 // Ruta raíz (opcional) para probar el servidor
 app.get('/', (req, res) => {
