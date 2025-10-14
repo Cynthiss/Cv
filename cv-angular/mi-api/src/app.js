@@ -7,8 +7,13 @@ const app = express();
 app.use(cors()); // Habilitar CORS
 app.use(express.json()); // Para que el servidor entienda los datos en formato JSON
 
-// Rutas
-app.use('/skills', skillsRoutes);
+// Rutas CRUD
+app.use('/skills', skillsRoutes); // Usar las rutas de skills
+
+// Ruta raíz (opcional) para probar el servidor
+app.get('/', (req, res) => {
+  res.send('Bienvenido a la API de habilidades');
+});
 
 // Configurar el puerto
 const PORT = process.env.PORT || 3000;
