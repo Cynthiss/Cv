@@ -1,13 +1,17 @@
+// src/app.js
 const express = require('express');
+const cors = require('cors');
+const skillsRoutes = require('./routes/skillsRoutes');
 const app = express();
 
-// Ruta principal
-app.get('/', (req, res) => {
-  res.send('Hola Mundo desde Express!');
-});
+app.use(cors()); // Habilitar CORS
+app.use(express.json()); // Para que el servidor entienda los datos en formato JSON
 
-// Iniciar el servidor
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
+// Rutas
+app.use('/skills', skillsRoutes);
+
+// Configurar el puerto
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor Express corriendo en http://localhost:${PORT}`);
 });
