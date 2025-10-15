@@ -1,0 +1,16 @@
+POST 
+
+{
+  "name": "React",
+  "level": "Advanced",
+  "category": "Frontend"
+}
+
+
+
+PATCH
+
+
+{
+  "level": "Intermediate"
+}
