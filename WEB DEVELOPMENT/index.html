@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <style>
+    .contacto-icon {
+      color: #198754;
+      font-size: 1.18em;
+      transition: transform 0.3s, color 0.3s;
+      margin-right: 0.3em;
+    }
+    .contacto-icon.open {
+      color: #0d6efd;
+      transform: rotate(8deg) scale(1.13);
+      text-shadow: 0 2px 8px rgba(13,110,253,0.10);
+    }
+    .contacto-icon.closed {
+      color: #198754;
+      transform: rotate(0deg) scale(1);
+      text-shadow: 0 1px 4px rgba(25,135,84,0.10);
+    }
+    .btn-modern-contacto {
+      background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+      color: #fff !important;
+      border: none !important;
+      border-radius: 1.5em !important;
+      box-shadow: 0 2px 8px rgba(67,233,123,0.10);
+      font-weight: 600;
+      padding: 0.45em 1.3em;
+      font-size: 1.02em;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .btn-modern-contacto:hover, .btn-modern-contacto:focus {
+      background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+      color: #fff !important;
+      box-shadow: 0 4px 16px rgba(56,249,215,0.13);
+      text-decoration: none;
+    }
+  </style>
+  <style>
+    .btn-modern-exp {
+      background: linear-gradient(90deg, #4f8cff 0%, #38c6ff 100%);
+      color: #fff !important;
+      border: none !important;
+      border-radius: 1.5em !important;
+      box-shadow: 0 2px 8px rgba(79,140,255,0.10);
+      font-weight: 600;
+      padding: 0.45em 1.3em;
+      font-size: 1.02em;
+      transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .btn-modern-exp:hover, .btn-modern-exp:focus {
+      background: linear-gradient(90deg, #38c6ff 0%, #4f8cff 100%);
+      color: #fff !important;
+      box-shadow: 0 4px 16px rgba(56,198,255,0.13);
+      text-decoration: none;
+    }
+  </style>
+  <style>
+    .experiencia-icon {
+      color: #0d6efd;
+      font-size: 1.25em;
+      transition: transform 0.3s, color 0.3s;
+      margin-right: 0.3em;
+    }
+    .experiencia-icon.open {
+      color: #198754;
+      transform: rotate(-15deg) scale(1.15);
+      text-shadow: 0 2px 8px rgba(25,135,84,0.12);
+    }
+    .experiencia-icon.closed {
+      color: #0d6efd;
+      transform: rotate(0deg) scale(1);
+      text-shadow: 0 1px 4px rgba(13,110,253,0.10);
+    }
+  </style>
+  <style>
+    @keyframes bounceIn {
+      0% { transform: scale(0.7); opacity: 0; }
+      60% { transform: scale(1.15); opacity: 1; }
+      80% { transform: scale(0.95); }
+      100% { transform: scale(1); }
+    }
+    .greeting-animated {
+      animation: bounceIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.18));
+    }
+    .greeting-toast-cube {
+      border-radius: 0.7rem !important;
+      box-shadow: 0 2px 8px rgba(30,40,60,0.10) !important;
+      border: 1px solid rgba(255,255,255,0.18) !important;
+      padding: 0.35rem 0.7rem !important;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      backdrop-filter: blur(4px);
+      transition: background 0.5s, color 0.5s;
+      min-width: 110px;
+      max-width: 160px;
+    }
+    .greeting-toast-cube .btn-close {
+      filter: drop-shadow(0 1px 2px rgba(0,0,0,0.12));
+    }
+    .greeting-toast-cube .greeting-message {
+      text-shadow: 0 1px 2px rgba(0,0,0,0.10);
+      font-size: 1.18rem;
+      font-weight: 600;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi CV</title>
+
+  <!-- Favicon (emoji como SVG embebido) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='48'%3E💻%3C/text%3E%3C/svg%3E">
+
+  <!-- (iconos) -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 430px)">
+    <link rel="stylesheet" href="tablet.css" media="screen and (min-width: 431px) and (max-width: 1024px)">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ENjdO4Dr2bkBIFxQpeoA6VKHr8zWvZg9lF1Q1M6xA4l5/OF4p1F+M7B0Zl5Fv5Q" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Botón de modo oscuro -->
+    <button id="darkModeToggle" class="btn btn-dark position-fixed" style="top: 1.5rem; right: 2rem; z-index: 999; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Toast de saludo dinámico flotante en esquina superior derecha -->
+    <div id="greetingToastWrapper" style="position: fixed; top: 24px; right: 24px; z-index: 9999; width: auto; max-width: 90vw; pointer-events: none;">
+      <div id="greetingToast" class="toast greeting-toast-cube fade" role="alert" aria-live="assertive" aria-atomic="true" style="pointer-events: auto; margin-left: auto;">
+        <div class="toast-body d-flex align-items-center justify-content-between" style="gap: 0.4rem;">
+          <div class="d-flex align-items-center" style="gap: 0.35rem;">
+            <span id="greetingIcon" class="fs-6 greeting-animated" style="display: flex; align-items: center;"></span>
+            <span id="greetingMessage" class="greeting-message"></span>
+          </div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close" style="opacity: 0.85; font-size: 0.7rem;"></button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Modo oscuro
+      const toggleBtn = document.getElementById('darkModeToggle');
+      const root = document.documentElement;
+      const body = document.body;
+      let darkMode = false;
+      function setDarkMode(on) {
+        darkMode = on;
+        if (darkMode) {
+          body.classList.add('dark-mode');
+          document.getElementById('cv')?.classList.add('dark-mode');
+          document.querySelectorAll('.card-profile, .card, .aside-card, .menu, .nav-modern, .table, h1, h2, h3').forEach(el => el.classList.add('dark-mode'));
+          toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+          body.classList.remove('dark-mode');
+          document.getElementById('cv')?.classList.remove('dark-mode');
+          document.querySelectorAll('.card-profile, .card, .aside-card, .menu, .nav-modern, .table, h1, h2, h3').forEach(el => el.classList.remove('dark-mode'));
+          toggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+      }
+      toggleBtn.addEventListener('click', () => setDarkMode(!darkMode));
+
+      // Saludo dinámico con toast Bootstrap mejorado
+      function getGreetingAndIcon() {
+        const hour = new Date().getHours();
+        if (hour >= 6 && hour < 12) return {
+          text: '¡Buenos días!',
+          icon: '<i class="fas fa-coffee"></i>',
+          gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
+          color: '#232946',
+          shadow: '0 8px 32px rgba(255, 207, 239, 0.18)'
+        };
+        if (hour >= 12 && hour < 19) return {
+          text: '¡Buenas tardes!',
+          icon: '<i class="fas fa-sun"></i>',
+          gradient: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)',
+          color: '#232946',
+          shadow: '0 8px 32px rgba(246, 211, 101, 0.18)'
+        };
+        return {
+          text: '¡Buenas noches!',
+          icon: '<i class="fas fa-moon"></i>',
+          gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          color: '#fff',
+          shadow: '0 8px 32px rgba(102, 126, 234, 0.18)'
+        };
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const greeting = getGreetingAndIcon();
+        const greetingMessage = document.getElementById('greetingMessage');
+        const greetingIcon = document.getElementById('greetingIcon');
+        const toastEl = document.getElementById('greetingToast');
+
+        // Actualizar contenido y estilos visuales
+        greetingMessage.textContent = greeting.text;
+        greetingIcon.innerHTML = greeting.icon;
+        greetingIcon.style.color = greeting.color;
+        toastEl.style.background = greeting.gradient;
+        toastEl.style.color = greeting.color;
+        toastEl.style.boxShadow = greeting.shadow;
+        toastEl.style.border = '2.5px solid rgba(255,255,255,0.35)';
+
+        // Animación del icono
+        greetingIcon.classList.add('greeting-animated');
+
+        // Mostrar el toast con animación Bootstrap
+        toastEl.classList.remove('show');
+        if (window.bootstrap && window.bootstrap.Toast) {
+          setTimeout(() => {
+            const toast = new bootstrap.Toast(toastEl, { delay: 4000 });
+            toast.show();
+          }, 300);
+        } else {
+          toastEl.classList.add('show');
+        }
+      });
+    </script>
+
+     <!-- Navbar Bootstrap -->
+  <!-- Navbar removed as requested -->
+     <div id="cv">
+    <header class="site-header">
+      <h1>Mi Currículum Vitae</h1>
+      <div class="social-links">
+        <a href="mailto:cynthiasantos@ufm.edu?subject=Contacto desde CV"
+           title="Enviar correo a cynthiasantos@ufm.edu"
+           class="icon-btn email" target="_blank">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/Cynthiss"
+           title="Ver perfil de GitHub"
+           target="_blank" rel="noopener noreferrer"
+           class="icon-btn github">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/cynthia-michelle-santos-letona-1704852ba"
+           title="Ver perfil de LinkedIn"
+           target="_blank" rel="noopener noreferrer"
+           class="icon-btn linkedin">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </header>
+
+    <nav class="site-nav">
+      <nav class="site-nav">
+        <ul class="menu">
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#soft-skills">Habilidades</a></li>
+          <li><a href="#lenguajes">Lenguajes</a></li>
+          <li><a href="#tecnologias">Tecnologías</a></li>
+        </ul>
+      </nav>
+
+    <main>
+  <section id="perfil">
+        <div class="card-profile">
+          <div class="text-center">
+            <img src="CV.jpeg" alt="Foto de Perfil" class="avatar rounded-circle mb-3" style="width: 120px; height: 120px; object-fit: cover;">
+            <h3 class="card-title mb-2">Cynthia Michelle Santos Letona</h3>
+            <h6 class="card-subtitle mb-3">Desarrolladora Web</h6>
+            <p class="card-text">Apasionada por la tecnología y el desarrollo web moderno. Experiencia en frontend y backend, siempre aprendiendo y mejorando.</p>
+          </div>
+        </div>
+      </section>
+
+
+
+
+      <div class="bloques-row">
+        <section id="lenguajes" class="card border-warning">
+          <h2>Lenguajes de Programación</h2>
+          <article>
+            <ol>
+              <li>Python</li>
+              <li>C#</li>
+              <li>C++</li>
+              <li>SQL</li>
+            </ol>
+          </article>
+        </section>
+
+        <section id="tecnologias" class="card border-purple">
+          <h2>Tecnologías y Herramientas</h2>
+          <article>
+            <ol>
+              <li>Docker</li>
+              <li>Postman</li>
+              <li>Firebase</li>
+              <li>React.js</li>
+              <li>Node.js</li>
+              <li>GitHub</li>
+              <li>MongoDB</li>
+              <li>AWS</li>
+            </ol>
+          </article>
+        </section>
+      </div>
+
+      <section id="soft-skills" class="card border-danger mt-4">
+        <h2>Soft Skills</h2>
+        <div class="mb-3" style="width:100%;">
+          <div class="input-group" style="width:100%;">
+            <span class="input-group-text"><i class="fas fa-search"></i></span>
+            <input type="text" id="searchSkills" class="form-control" placeholder="Buscar habilidades...">
+            <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+        </div>
+        <ol id="skillsList">
+          <li data-skill="comunicación efectiva">Comunicación efectiva</li>
+          <li data-skill="trabajo en equipo">Trabajo en equipo</li>
+          <li data-skill="resolución de problemas">Resolución de problemas</li>
+          <li data-skill="gestión del tiempo">Gestión del tiempo</li>
+          <li data-skill="adaptabilidad">Adaptabilidad</li>
+          <li data-skill="creatividad">Creatividad</li>
+          <li data-skill="liderazgo">Liderazgo</li>
+          <li data-skill="pensamiento crítico">Pensamiento crítico</li>
+        </ol>
+      </section>
+
+      <section id="educacion" class="card border-green">
+        <h2>Educación</h2>
+        <article>
+              <table class="table table-striped table-hover table-bordered align-middle table-educacion">
+            <caption>Educación: años, institución y título obtenido</caption>
+            <thead>
+              <tr>
+                <th scope="col">Año</th>
+                <th scope="col">Institución</th>
+                <th scope="col">Título obtenido</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2023</td>
+                <td>Universidad Francisco Marroquín</td>
+                <td>Licenciatura en Ingeniería en Ciencias de la Computación</td>
+              </tr>
+              <tr>
+                <td>2022</td>
+                <td>Colegio Valle del Saber</td>
+                <td>Bachiller en computación con orientación científica</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <section id="experiencia" class="card border-teal">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h2 class="mb-0">Experiencia Laboral</h2>
+          <button id="toggleExperiencia" class="btn btn-outline-primary btn-sm">
+            <i class="fas fa-eye experiencia-icon closed" id="experienciaIcon"></i> <span id="experienciaText">Mostrar</span>
+          </button>
+          <script>
+            // Cambiar clase del botón al cargar
+            document.addEventListener('DOMContentLoaded', function() {
+              document.getElementById('toggleExperiencia').classList.remove('btn-outline-primary','btn-sm');
+              document.getElementById('toggleExperiencia').classList.add('btn-modern-exp');
+            });
+          </script>
+          </button>
+        </div>
+        <article id="experienciaContent" style="display: none;">
+              <table class="table table-striped table-hover table-bordered align-middle table-experiencia">
+            <caption>Experiencia laboral: periodo, empresa y puesto</caption>
+            <thead>
+              <tr>
+                <th scope="col">Periodo</th>
+                <th scope="col">Empresa</th>
+                <th scope="col">Puesto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2024 – 2025</td>
+                <td>Tech Solutions S.A.</td>
+                <td>Desarrolladora Frontend</td>
+              </tr>
+              <tr>
+                <td>2023 – 2024</td>
+                <td>Innovación Digital</td>
+                <td>Practicante de Desarrollo</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+
+      <aside class="aside-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3 class="mb-0">Información Adicional</h3>
+          <button id="toggleContacto" class="btn btn-outline-success btn-sm">
+            <i class="fas fa-address-card contacto-icon closed" id="contactoIcon"></i> <span id="contactoText">Mostrar Contacto</span>
+          </button>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              document.getElementById('toggleContacto').classList.remove('btn-outline-success','btn-sm');
+              document.getElementById('toggleContacto').classList.add('btn-modern-contacto');
+            });
+          </script>
+          </button>
+        </div>
+        <p>Datos complementarios sobre mi perfil profesional.</p>
+        
+        <!-- Información de contacto oculta por defecto -->
+        <div id="contactoContent" style="display: none;" class="mb-4">
+          <div class="card bg-light">
+            <div class="card-body">
+              <h3 class="card-title"><i class="fas fa-envelope me-2"></i> Información de Contacto</h3>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-phone me-2"></i>+502 4213-4974</li>
+                <li><i class="fas fa-envelope me-2"></i>cynthiasantos@ufm.edu</li>
+                <li><i class="fas fa-map-marker-alt me-2"></i>Guatemala City, Guatemala</li>
+                <li><i class="fas fa-calendar me-2"></i>Disponible para proyectos</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <table class="table table-striped table-hover table-bordered align-middle table-certificados" style="margin-top: 12px;">
+          <caption>Certificados: institución, certificado y año</caption>
+          <thead>
+            <tr>
+              <th scope="col">Institución</th>
+              <th scope="col">Certificado</th>
+              <th scope="col">Año</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Scruminc</td>
+              <td>Scrum Master</td>
+              <td>2024</td>
+            </tr>
+            <tr>
+              <td>Ingelearn</td>
+              <td>Industria 4.0</td>
+              <td>2024</td>
+            </tr>
+            <tr>
+              <td>Franklin Covey</td>
+              <td>The 7 Habits of Highly Effective People</td>
+              <td>2021</td>
+            </tr>
+          </tbody>
+        </table>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Mi CV</p>
+    </footer>
+  </div>
+
+  <!-- Botón Descargar PDF -->
+    <a href="#" id="btn-pdf" class="btn btn-success btn-lg d-block mx-auto mt-4" title="Descargar CV (PDF)" aria-label="Descargar CV en PDF">
+      <i class="fas fa-file-download me-2"></i> Descargar PDF
+    </a>
+
+  <script>
+    document.getElementById('btn-pdf').addEventListener('click', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';   // ocultar botón en impresión
+      window.print();
+      setTimeout(() => { this.style.display = 'block'; }, 600);
+    });
+
+    // Toggle experiencia laboral
+    document.getElementById('toggleExperiencia').addEventListener('click', function() {
+      const content = document.getElementById('experienciaContent');
+      const icon = document.getElementById('experienciaIcon');
+      const text = document.getElementById('experienciaText');
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.className = 'fas fa-eye-slash experiencia-icon open';
+        text.textContent = 'Ocultar';
+      } else {
+        content.style.display = 'none';
+        icon.className = 'fas fa-eye experiencia-icon closed';
+        text.textContent = 'Mostrar';
+      }
+    });
+
+    // Toggle información de contacto
+    document.getElementById('toggleContacto').addEventListener('click', function() {
+      const content = document.getElementById('contactoContent');
+      const icon = document.getElementById('contactoIcon');
+      const text = document.getElementById('contactoText');
+      
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+        icon.className = 'fas fa-address-card contacto-icon open';
+        text.textContent = 'Ocultar Contacto';
+      } else {
+        content.style.display = 'none';
+        icon.className = 'fas fa-address-card contacto-icon closed';
+        text.textContent = 'Mostrar Contacto';
+      }
+    });
+
+    // Buscador de habilidades robusto y funcional
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('searchSkills');
+      const clearBtn = document.getElementById('clearSearch');
+      const skillsList = document.getElementById('skillsList');
+      // Solo selecciona los LI reales (no nodos de texto)
+      const allSkills = Array.from(skillsList.querySelectorAll('li'));
+
+      function filterSkills() {
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        allSkills.forEach((li) => {
+          // Usa data-skill si existe, si no, el texto visible
+          const skillText = (li.getAttribute('data-skill') || li.textContent).toLowerCase();
+          li.style.display = skillText.includes(searchTerm) ? '' : 'none';
+        });
+      }
+
+      searchInput.addEventListener('input', filterSkills);
+      clearBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        filterSkills();
+        searchInput.focus();
+      });
+      filterSkills();
+    });
+  </script>
+
+    <!-- Bootstrap Bundle JS (para toasts y componentes interactivos) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qQ2i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+</body>
+</html>
